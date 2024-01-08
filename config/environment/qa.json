@@ -1,0 +1,12 @@
+{
+    "baseURL": "https://apphomo.godoycruz.gob.ar/gestionsocialhomo/servlet/login",
+    "username": "dcarrizo",
+    "password": "123",
+    "data": {
+        "name": "",
+        "lastName": "",
+        "birthdate": "",
+        "adress": "",
+        "city": ""
+    }
+}
