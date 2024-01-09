@@ -3,6 +3,7 @@ import { BasePage } from './commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../config/configLoader'
 
 export class LoginPage extends BasePage {
+
     readonly USUARIO_INPUT: Locator
     readonly PASSWORD_INPUT: Locator
     readonly INGRESAR_BUTTON: Locator

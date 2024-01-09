@@ -3,6 +3,7 @@ import { BasePage } from '../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLoader'
 
 export class MenuBuscarBeneficiario extends BasePage {
+
     readonly BUSCAR_BENEFICIARIO_IMG: Locator
 
     private env: any

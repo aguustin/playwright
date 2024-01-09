@@ -2,9 +2,9 @@ import { Page, BrowserContext, Locator, expect } from '@playwright/test'
 import { BasePage } from '../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLoader'
 
-export class MenuQRMiniaplicacion extends BasePage {
+export class MenuBuscarListadoPrestaciones extends BasePage {
 
-    readonly QR_IMG: Locator
+    readonly LISTADO_PRESTACIONES_IMG: Locator
 
     private env: any
 
@@ -12,16 +12,16 @@ export class MenuQRMiniaplicacion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.QR_IMG = this.page.locator('//img [@id="IMAGEQR_MPAGE"]')
+        this.LISTADO_PRESTACIONES_IMG = this.page.locator('//img [@id="IMAGE4_MPAGE"]')
     }
-    async clickMenuQRMiniaplicacion(): Promise<void> {
-        await this.click(this.QR_IMG)
+    async clickMenuBuscarListadoPrestaciones(): Promise<void> {
+        await this.click(this.LISTADO_PRESTACIONES_IMG)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
 
 
-    async navegarAccederMenuQRMiniaplicacion(): Promise<void> {
-        await this.clickMenuQRMiniaplicacion()
+    async navegarAccederMenuBuscarListadoPrestaciones(): Promise<void> {
+        await this.clickMenuBuscarListadoPrestaciones()
     }
 }
