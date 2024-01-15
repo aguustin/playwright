@@ -4,6 +4,7 @@ import { MenuQRMiniaplicacion } from '../pageObjectModel/header/MenuQRMiniaplica
 import { MenuBuscarBeneficiario } from '../pageObjectModel/header/MenuBuscarBeneficiario'
 import { MenuBuscarListadoPrestaciones } from '../pageObjectModel/header/MenuBuscarListadoPrestaciones'
 import { MenuEntregaPrestaciones } from '../pageObjectModel/header/MenuEntregaPrestaciones'
+import { MenuAccionesMasivas } from '../pageObjectModel/header/MenuAccionesMasivas'
 
 const environment = process.env.TEST || 'qa'
 
@@ -13,6 +14,7 @@ const test = baseTest.extend<{
     menuBuscarBeneficiario: MenuBuscarBeneficiario
     menuBuscarListadoPrestaciones: MenuBuscarListadoPrestaciones
     menuEntregaPrestaciones: MenuEntregaPrestaciones
+    menuAccionesMasivas: MenuAccionesMasivas
 
 }>({
     loginPage: async ({ page, context }, use) => {
@@ -35,6 +37,10 @@ const test = baseTest.extend<{
     },
     menuEntregaPrestaciones: async ({ page, context }, use) => {
         const menu = new MenuEntregaPrestaciones(page, context, environment)
+        await use(menu)
+    },
+    menuAccionesMasivas: async ({ page, context }, use) => {
+        const menu = new MenuAccionesMasivas(page, context, environment)
         await use(menu)
     },
 
