@@ -4,7 +4,7 @@ import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLo
 
 export class MenuAccionesMasivas extends BasePage {
 
-    readonly ACCIONES_MASIVAS_IMG: Locator
+    readonly ACCIONES_MASIVAS: Locator
 
     private env: any
 
@@ -12,10 +12,10 @@ export class MenuAccionesMasivas extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.ACCIONES_MASIVAS_IMG = this.page.locator('//img [@id="IMAGEMASIVO_MPAGE"]')
+        this.ACCIONES_MASIVAS = this.page.locator('//img [@id="IMAGEMASIVO_MPAGE"]')
     }
     async clickMenuAccionesMasivas(): Promise<void> {
-        await this.click(this.ACCIONES_MASIVAS_IMG)
+        await this.click(this.ACCIONES_MASIVAS)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }

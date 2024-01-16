@@ -21,6 +21,7 @@ export class LoginPage extends BasePage {
 
     async navigateToLoginPage(): Promise<void> {
         await this.goto(this.env.baseURL)
+        await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
         await this.page.waitForTimeout(3000)
     }

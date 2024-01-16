@@ -2,9 +2,9 @@ import { Page, BrowserContext, Locator, expect } from '@playwright/test'
 import { BasePage } from '../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLoader'
 
-export class MenuBuscarListadoPrestaciones extends BasePage {
+export class MenuCerrarSesion extends BasePage {
 
-    readonly LISTADO_PRESTACIONES: Locator
+    readonly CERRAR_SESION: Locator
 
     private env: any
 
@@ -12,16 +12,16 @@ export class MenuBuscarListadoPrestaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.LISTADO_PRESTACIONES = this.page.locator('//img [@id="IMAGE4_MPAGE"]')
+        this.CERRAR_SESION = this.page.locator('//img [@id="IMAGE2_MPAGE"]')
     }
-    async clickMenuBuscarListadoPrestaciones(): Promise<void> {
-        await this.click(this.LISTADO_PRESTACIONES)
+    async clickMenuCerrarSesion(): Promise<void> {
+        await this.click(this.CERRAR_SESION)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
 
 
-    async navegarAccederMenuBuscarListadoPrestaciones(): Promise<void> {
-        await this.clickMenuBuscarListadoPrestaciones()
+    async navegarAccederMenuCerrarSesion(): Promise<void> {
+        await this.clickMenuCerrarSesion()
     }
 }

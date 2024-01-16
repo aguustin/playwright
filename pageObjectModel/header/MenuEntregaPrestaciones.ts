@@ -4,7 +4,7 @@ import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLo
 
 export class MenuEntregaPrestaciones extends BasePage {
 
-    readonly ENTREGA_PRESTACIONES_IMG: Locator
+    readonly ENTREGA_PRESTACIONES: Locator
 
     private env: any
 
@@ -12,10 +12,10 @@ export class MenuEntregaPrestaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.ENTREGA_PRESTACIONES_IMG = this.page.locator('//img [@id="IMAGENENTREGARPRESTACIONES_MPAGE"]')
+        this.ENTREGA_PRESTACIONES = this.page.locator('//img [@id="IMAGENENTREGARPRESTACIONES_MPAGE"]')
     }
     async clickMenuEntregaPrestaciones(): Promise<void> {
-        await this.click(this.ENTREGA_PRESTACIONES_IMG)
+        await this.click(this.ENTREGA_PRESTACIONES)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }

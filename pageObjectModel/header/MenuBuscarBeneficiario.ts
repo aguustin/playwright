@@ -4,7 +4,7 @@ import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLo
 
 export class MenuBuscarBeneficiario extends BasePage {
 
-    readonly BUSCAR_BENEFICIARIO_IMG: Locator
+    readonly BUSCAR_BENEFICIARIO: Locator
 
     private env: any
 
@@ -12,10 +12,10 @@ export class MenuBuscarBeneficiario extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCAR_BENEFICIARIO_IMG = this.page.locator('//img [@id="IMAGE3_MPAGE"]')
+        this.BUSCAR_BENEFICIARIO = this.page.locator('//img [@id="IMAGE3_MPAGE"]')
     }
     async clickMenuBuscarBeneficiario(): Promise<void> {
-        await this.click(this.BUSCAR_BENEFICIARIO_IMG)
+        await this.click(this.BUSCAR_BENEFICIARIO)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }

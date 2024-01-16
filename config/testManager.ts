@@ -5,6 +5,9 @@ import { MenuBuscarBeneficiario } from '../pageObjectModel/header/MenuBuscarBene
 import { MenuBuscarListadoPrestaciones } from '../pageObjectModel/header/MenuBuscarListadoPrestaciones'
 import { MenuEntregaPrestaciones } from '../pageObjectModel/header/MenuEntregaPrestaciones'
 import { MenuAccionesMasivas } from '../pageObjectModel/header/MenuAccionesMasivas'
+import { MenuIngresarBeneficiario } from '../pageObjectModel/header/MenuIngresarBeneficiario'
+import { MenuAdministracion } from '../pageObjectModel/header/MenuAdministracion'
+import { MenuCerrarSesion } from '../pageObjectModel/header/MenuCerrarSesion'
 
 const environment = process.env.TEST || 'qa'
 
@@ -15,6 +18,9 @@ const test = baseTest.extend<{
     menuBuscarListadoPrestaciones: MenuBuscarListadoPrestaciones
     menuEntregaPrestaciones: MenuEntregaPrestaciones
     menuAccionesMasivas: MenuAccionesMasivas
+    menuIngresarBeneficiario: MenuIngresarBeneficiario
+    menuAdministracion: MenuAdministracion
+    menuCerrarSesion: MenuCerrarSesion
 
 }>({
     loginPage: async ({ page, context }, use) => {
@@ -41,6 +47,18 @@ const test = baseTest.extend<{
     },
     menuAccionesMasivas: async ({ page, context }, use) => {
         const menu = new MenuAccionesMasivas(page, context, environment)
+        await use(menu)
+    },
+    menuIngresarBeneficiario: async ({ page, context }, use) => {
+        const menu = new MenuIngresarBeneficiario(page, context, environment)
+        await use(menu)
+    },
+    menuAdministracion: async ({ page, context }, use) => {
+        const menu = new MenuAdministracion(page, context, environment)
+        await use(menu)
+    },
+    menuCerrarSesion: async ({ page, context }, use) => {
+        const menu = new MenuCerrarSesion(page, context, environment)
         await use(menu)
     },
 

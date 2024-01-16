@@ -4,7 +4,7 @@ import { loadEnvironmentConfig, loadTestDataConfig } from '../../config/configLo
 
 export class MenuQRMiniaplicacion extends BasePage {
 
-    readonly QR_IMG: Locator
+    readonly QR_MINIAPP: Locator
 
     private env: any
 
@@ -12,10 +12,10 @@ export class MenuQRMiniaplicacion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.QR_IMG = this.page.locator('//img [@id="IMAGEQR_MPAGE"]')
+        this.QR_MINIAPP = this.page.locator('//img [@id="IMAGEQR_MPAGE"]')
     }
     async clickMenuQRMiniaplicacion(): Promise<void> {
-        await this.click(this.QR_IMG)
+        await this.click(this.QR_MINIAPP)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
