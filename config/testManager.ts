@@ -8,6 +8,9 @@ import { MenuAccionesMasivas } from '../pageObjectModel/header/MenuAccionesMasiv
 import { MenuIngresarBeneficiario } from '../pageObjectModel/header/MenuIngresarBeneficiario'
 import { MenuAdministracion } from '../pageObjectModel/header/MenuAdministracion'
 import { MenuCerrarSesion } from '../pageObjectModel/header/MenuCerrarSesion'
+import {
+    AdministracionGestionarCapacitaciones
+} from '../pageObjectModel/header/Administracion/AdministracionGestionarCapacitaciones'
 
 const environment = process.env.TEST || 'qa'
 
@@ -21,12 +24,22 @@ const test = baseTest.extend<{
     menuIngresarBeneficiario: MenuIngresarBeneficiario
     menuAdministracion: MenuAdministracion
     menuCerrarSesion: MenuCerrarSesion
+    administracionGestionarCapacitaciones: AdministracionGestionarCapacitaciones
 
 }>({
     loginPage: async ({ page, context }, use) => {
         const loginPage = new LoginPage(page, context, environment)
         await use(loginPage)
     },
+
+
+    // ADMINISTRACION
+    administracionGestionarCapacitaciones: async ({ page, context }, use) => {
+        const menu = new AdministracionGestionarCapacitaciones(page, context, environment)
+        await use(menu)
+    },
+
+
 
     // HEADER
     menuQRMiniaplicacion: async ({ page, context }, use) => {
