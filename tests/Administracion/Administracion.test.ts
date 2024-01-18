@@ -1,6 +1,5 @@
 import test from '../../config/testManager'
 
-// We can use steps like this to reproduce Cucumber formatting
 test.beforeEach(async ({ loginPage, menuAdministracion }) => {
     await test.step('Navegar en la url de Gestion Social', async () => {
         await loginPage.navigateToLoginPage()
@@ -16,7 +15,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion }) => {
     })
 })
 
-test('@Administracion (IDGS-02) Verificar que al clickear en Gestionar Capacitaciones funciona correctamente', async ({administracionGestionarCapacitaciones}) => {
+test('@Administracion @Regression (IDGS-10) Verificar que al clickear en Gestionar Capacitaciones funciona correctamente', async ({administracionGestionarCapacitaciones}) => {
 
     await test.step('Click en Gestionar Capacitaciones', async () => {
         await administracionGestionarCapacitaciones.navegarGestionarCapacitaciones()

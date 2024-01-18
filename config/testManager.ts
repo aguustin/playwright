@@ -11,6 +11,12 @@ import { MenuCerrarSesion } from '../pageObjectModel/header/MenuCerrarSesion'
 import {
     AdministracionGestionarCapacitaciones
 } from '../pageObjectModel/header/Administracion/AdministracionGestionarCapacitaciones'
+import {
+    GestionarCapacitacionesBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/GestionarCapacitaciones/GestionarCapacitacionesBuscadorDescripcion'
+import {
+    AdministracionBotonExportExcel
+} from '../pageObjectModel/header/Administracion/AdministracionBotonExportExcel'
 
 const environment = process.env.TEST || 'qa'
 
@@ -25,6 +31,8 @@ const test = baseTest.extend<{
     menuAdministracion: MenuAdministracion
     menuCerrarSesion: MenuCerrarSesion
     administracionGestionarCapacitaciones: AdministracionGestionarCapacitaciones
+    gestionarCapacitacionesBuscadorDescripcion: GestionarCapacitacionesBuscadorDescripcion
+    administracionBotonExportExcel: AdministracionBotonExportExcel
 
 }>({
     loginPage: async ({ page, context }, use) => {
@@ -38,6 +46,18 @@ const test = baseTest.extend<{
         const menu = new AdministracionGestionarCapacitaciones(page, context, environment)
         await use(menu)
     },
+
+    // GESTIONAR CAPACITACIONES
+    gestionarCapacitacionesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarCapacitacionesBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+    administracionBotonExportExcel: async ({ page, context }, use) => {
+        const menu = new AdministracionBotonExportExcel(page, context, environment)
+        await use(menu)
+    },
+
+
 
 
 

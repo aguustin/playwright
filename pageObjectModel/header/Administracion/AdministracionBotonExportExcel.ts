@@ -2,9 +2,9 @@ import { Page, BrowserContext, Locator, expect } from '@playwright/test'
 import { BasePage } from '../../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../../config/configLoader'
 
-export class AdministracionGestionarCapacitaciones extends BasePage {
+export class AdministracionBotonExportExcel extends BasePage {
 
-    readonly GESTIONAR_CAPACITACIONES: Locator
+    readonly EXPORT_EXCEL: Locator
 
     private env: any
 
@@ -12,15 +12,15 @@ export class AdministracionGestionarCapacitaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.GESTIONAR_CAPACITACIONES = this.page.locator('//span [@id="TEXTBLOCKCAPACITACIONES"]')
+        this.EXPORT_EXCEL = this.page.locator("//input[@id='BTNEXPORT']")
     }
-    async clickGestionarCapacitaciones(): Promise<void> {
-        await this.click(this.GESTIONAR_CAPACITACIONES)
+    async clickBotonExportExcel(): Promise<void> {
+        await this.click(this.EXPORT_EXCEL)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
 
-    async navegarGestionarCapacitaciones(): Promise<void> {
-        await this.clickGestionarCapacitaciones()
+    async navegarAdministracionBotonExportExcel(): Promise<void> {
+        await this.clickBotonExportExcel()
     }
 }
