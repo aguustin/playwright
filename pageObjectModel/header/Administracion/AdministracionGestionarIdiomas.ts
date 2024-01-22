@@ -2,9 +2,9 @@ import { Page, BrowserContext, Locator, expect } from '@playwright/test'
 import { BasePage } from '../../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../../config/configLoader'
 
-export class AdministracionGestionarCapacitaciones extends BasePage {
+export class AdministracionGestionarIdiomas extends BasePage {
 
-    readonly CAPACITACIONES: Locator
+    readonly IDIOMA: Locator
 
     private env: any
 
@@ -12,16 +12,16 @@ export class AdministracionGestionarCapacitaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.CAPACITACIONES = this.page.locator("(//a[normalize-space()='Gestionar Capacitaciones'])[1]")
+        this.IDIOMA = this.page.locator("(//a[normalize-space()='Gestionar Idiomas'])[1]")
     }
-    async clickGestionarCapacitaciones(): Promise<void> {
-        await this.click(this.CAPACITACIONES)
+    async clickGestionarIdiomas(): Promise<void> {
+        await this.click(this.IDIOMA)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
         await this.page.waitForTimeout(3000)
     }
 
-    async navegarAdministracionGestionarCapacitaciones(): Promise<void> {
-        await this.clickGestionarCapacitaciones()
+    async navegarAdministracionGestionarIdiomas(): Promise<void> {
+        await this.clickGestionarIdiomas()
     }
 }

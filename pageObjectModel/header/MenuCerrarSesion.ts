@@ -12,7 +12,7 @@ export class MenuCerrarSesion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.CERRAR_SESION = this.page.locator('//img [@id="IMAGE2_MPAGE"]')
+        this.CERRAR_SESION = this.page.locator("(//img[@id='IMAGE2_MPAGE'])[1]")
     }
     async clickMenuCerrarSesion(): Promise<void> {
         await this.click(this.CERRAR_SESION)

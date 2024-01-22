@@ -14,13 +14,13 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarC
         await menuAdministracion.navegarAccederMenuAdministracion()
     })
     await test.step('Click en Gestionar Capacitaciones', async () => {
-        await administracionGestionarCapacitaciones.navegarGestionarCapacitaciones()
+        await administracionGestionarCapacitaciones.navegarAdministracionGestionarCapacitaciones()
     })
 })
 
-test('@GestionarCapacitaciones @Regression (IDGS-11) Verificar que al ingresar datos validos en el buscador Descripcion funciona correctamente', async ({gestionarCapacitacionesBuscadorDescripcion}) => {
+test('@Administracion @Regression (IDGS-11) Verificar que al ingresar datos validos en el buscador Descripcion funciona correctamente', async ({gestionarCapacitacionesBuscadorDescripcion}) => {
 
-    await test.step('Click en Gestionar Capacitaciones', async () => {
+    await test.step('Ingresar datos en el buscador Descripcion', async () => {
         await gestionarCapacitacionesBuscadorDescripcion.navegarGestionarCapacitacionesBuscadorDescripcion()
     })
 })

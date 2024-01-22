@@ -12,7 +12,7 @@ export class MenuIngresarBeneficiario extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.INGRESAR_BENEFICIARIO = this.page.locator("//img[@id='IMAGEINGRESAR_MPAGE']")
+        this.INGRESAR_BENEFICIARIO = this.page.locator("(//img[@id='IMAGEINGRESAR_MPAGE'])[1]")
     }
     async clickMenuIngresarBeneficiario(): Promise<void> {
         await this.click(this.INGRESAR_BENEFICIARIO)

@@ -12,7 +12,7 @@ export class MenuAdministracion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.ADMINISTRACION = this.page.locator('//img[@id="IMAGEADMIN_MPAGE"]')
+        this.ADMINISTRACION = this.page.locator("(//img[@id='IMAGEADMIN_MPAGE'])[1]")
     }
     async clickMenuAdministracion(): Promise<void> {
         await this.click(this.ADMINISTRACION)

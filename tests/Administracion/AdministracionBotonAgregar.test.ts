@@ -15,7 +15,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion}) => {
     })
 })
 
-test('@Test @Administracion @Regression (IDGS-35) Verificar que al clickear el boton EXPORT en Capacitaciones funciona correctamente', async ({administracionGestionarCapacitaciones}) => {
+test('@Test @Administracion @Regression (IDGS-34) Verificar que al clickear el boton +AGREGAR en Capacitaciones funciona correctamente', async ({administracionGestionarCapacitaciones}) => {
 
     await test.step('Click en Gestionar Capacitaciones', async () => {
         await administracionGestionarCapacitaciones.navegarAdministracionGestionarCapacitaciones()
@@ -23,9 +23,9 @@ test('@Test @Administracion @Regression (IDGS-35) Verificar que al clickear el b
 
 })
 
-test.afterEach(async ({ administracionBotonExportExcel }) => {
+test.afterEach(async ({ administracionBotonAgregar }) => {
 
-    await test.step('Click en el boton EXPORT', async () => {
-        await administracionBotonExportExcel.navegarAdministracionBotonExportExcel()
+    await test.step('Click en el boton +AGREGAR', async () => {
+        await administracionBotonAgregar.navegarAdministracionBotonAgregar()
     })
 })

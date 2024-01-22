@@ -2,9 +2,9 @@ import { Page, BrowserContext, Locator, expect } from '@playwright/test'
 import { BasePage } from '../../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../../config/configLoader'
 
-export class AdministracionGestionarCapacitaciones extends BasePage {
+export class AdministracionListadoBeneficiariosValidados extends BasePage {
 
-    readonly CAPACITACIONES: Locator
+    readonly BENEFICIARIOS_VALIDADOS: Locator
 
     private env: any
 
@@ -12,16 +12,16 @@ export class AdministracionGestionarCapacitaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.CAPACITACIONES = this.page.locator("(//a[normalize-space()='Gestionar Capacitaciones'])[1]")
+        this.BENEFICIARIOS_VALIDADOS = this.page.locator("(//a[normalize-space()='Listado Beneficiarios Validados'])[1]")
     }
-    async clickGestionarCapacitaciones(): Promise<void> {
-        await this.click(this.CAPACITACIONES)
+    async clickListadoBeneficiariosValidados(): Promise<void> {
+        await this.click(this.BENEFICIARIOS_VALIDADOS)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
         await this.page.waitForTimeout(3000)
     }
 
-    async navegarAdministracionGestionarCapacitaciones(): Promise<void> {
-        await this.clickGestionarCapacitaciones()
+    async navegarAdministracionListadoBeneficiariosValidados(): Promise<void> {
+        await this.clickListadoBeneficiariosValidados()
     }
 }

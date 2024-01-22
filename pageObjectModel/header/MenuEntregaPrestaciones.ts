@@ -12,7 +12,7 @@ export class MenuEntregaPrestaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.ENTREGA_PRESTACIONES = this.page.locator('//img [@id="IMAGENENTREGARPRESTACIONES_MPAGE"]')
+        this.ENTREGA_PRESTACIONES = this.page.locator("(//img[@id='IMAGENENTREGARPRESTACIONES_MPAGE'])[1]")
     }
     async clickMenuEntregaPrestaciones(): Promise<void> {
         await this.click(this.ENTREGA_PRESTACIONES)

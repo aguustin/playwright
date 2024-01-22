@@ -12,7 +12,7 @@ export class MenuBuscarListadoPrestaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.LISTADO_PRESTACIONES = this.page.locator('//img [@id="IMAGE4_MPAGE"]')
+        this.LISTADO_PRESTACIONES = this.page.locator("(//img[@id='IMAGE4_MPAGE'])[1]")
     }
     async clickMenuBuscarListadoPrestaciones(): Promise<void> {
         await this.click(this.LISTADO_PRESTACIONES)

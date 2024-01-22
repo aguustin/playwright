@@ -12,7 +12,7 @@ export class MenuAccionesMasivas extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.ACCIONES_MASIVAS = this.page.locator('//img [@id="IMAGEMASIVO_MPAGE"]')
+        this.ACCIONES_MASIVAS = this.page.locator("(//img[@id='IMAGEMASIVO_MPAGE'])[1]")
     }
     async clickMenuAccionesMasivas(): Promise<void> {
         await this.click(this.ACCIONES_MASIVAS)

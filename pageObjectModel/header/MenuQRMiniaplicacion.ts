@@ -12,7 +12,7 @@ export class MenuQRMiniaplicacion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.QR_MINIAPP = this.page.locator('//img [@id="IMAGEQR_MPAGE"]')
+        this.QR_MINIAPP = this.page.locator("(//img[@id='IMAGEQR_MPAGE'])[1]")
     }
     async clickMenuQRMiniaplicacion(): Promise<void> {
         await this.click(this.QR_MINIAPP)

@@ -12,12 +12,13 @@ export class AdministracionBotonExportExcel extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.EXPORT_EXCEL = this.page.locator("//input[@id='BTNEXPORT']")
+        this.EXPORT_EXCEL = this.page.locator("(//input[@id='BTNEXPORT'])[1]")
     }
     async clickBotonExportExcel(): Promise<void> {
         await this.click(this.EXPORT_EXCEL)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
+        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionBotonExportExcel(): Promise<void> {
