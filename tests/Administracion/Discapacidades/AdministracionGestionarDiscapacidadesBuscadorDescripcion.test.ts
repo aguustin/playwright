@@ -1,6 +1,6 @@
 import test from '../../../config/testManager'
 
-test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarCapacitaciones }) => {
+test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarProfesiones }) => {
     await test.step('Navegar en la url de Gestion Social', async () => {
         await loginPage.navigateToLoginPage()
     })
@@ -13,14 +13,14 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarC
     await test.step('Click en el icono Administracion', async () => {
         await menuAdministracion.navegarAccederMenuAdministracion()
     })
-    await test.step('Click en Gestionar Capacitaciones', async () => {
-        await administracionGestionarCapacitaciones.navegarAdministracionGestionarCapacitaciones()
+    await test.step('Click en Gestionar Profesiones', async () => {
+        await administracionGestionarProfesiones.navegarAdministracionGestionarProfesiones()
     })
 })
 
-test('@Administracion @Regression (IDGS-11) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Capacitaciones funciona correctamente', async ({gestionarCapacitacionesBuscadorDescripcion}) => {
+test('Test @Administracion @Regression (IDGS-44) Verificar que al ingresar datos validos en el buscador Descripcion en Discapacidades funciona correctamente', async ({gestionarDiscapacidadesBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
-        await gestionarCapacitacionesBuscadorDescripcion.navegarGestionarCapacitacionesBuscadorDescripcion()
+        await gestionarDiscapacidadesBuscadorDescripcion.navegarGestionarDiscapacidadesBuscadorDescripcion()
     })
 })

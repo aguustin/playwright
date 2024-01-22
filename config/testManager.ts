@@ -73,6 +73,18 @@ import {
 import {
     AdministracionGestionarPresencia
 } from '../pageObjectModel/header/Administracion/AdministracionGestionarPresencia'
+import {
+    GestionarInteresBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/GestionarIntereses/GestionarInteresBuscadorDescripcion'
+import {
+    GestionarEnfermedadesBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Enfermedades/GestionarEnfermedadesBuscadorDescripcion'
+import {
+    GestionarProfesionesBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Profesiones/GestionarProfesionesBuscadorDescripcion'
+import {
+    GestionarDiscapacidadesBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Discapacidades/GestionarDiscapacidadesBuscadorDescripcion'
 
 const environment = process.env.TEST || 'qa'
 
@@ -111,6 +123,10 @@ const test = baseTest.extend<{
     administracionGestionarCargos: AdministracionGestionarCargos
     administracionGestionarMotivosBaja: AdministracionGestionarMotivosBaja
     administracionGestionarPresencia: AdministracionGestionarPresencia
+    gestionarInteresBuscadorDescripcion: GestionarInteresBuscadorDescripcion
+    gestionarEnfermedadesBuscadorDescripcion: GestionarEnfermedadesBuscadorDescripcion
+    gestionarProfesionesBuscadorDescripcion: GestionarProfesionesBuscadorDescripcion
+    gestionarDiscapacidadesBuscadorDescripcion: GestionarDiscapacidadesBuscadorDescripcion
 
 
 }>({
@@ -120,23 +136,51 @@ const test = baseTest.extend<{
     },
 
 
+    // GESTIONAR CAPACITACIONES
+    gestionarCapacitacionesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarCapacitacionesBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
 
-    administracionGestionarEstadosBeneficiario: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarEstadosBeneficiario(page, context, environment)
+    // GESTIONAR INTERES
+    gestionarInteresBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarInteresBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
-    administracionGestionarCargos: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarCargos(page, context, environment)
+
+    // GESTIONAR ENFERMEDADES
+    gestionarEnfermedadesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarEnfermedadesBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
-    administracionGestionarMotivosBaja: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarMotivosBaja(page, context, environment)
+
+    // GESTIONAR PROFESIONES
+    gestionarProfesionesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarProfesionesBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
-    administracionGestionarPresencia: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarPresencia(page, context, environment)
+
+    // GESTIONAR DISCAPACIDADES
+    gestionarDiscapacidadesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarDiscapacidadesBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
+
+
+
+
+    administracionBotonExportExcel: async ({ page, context }, use) => {
+        const menu = new AdministracionBotonExportExcel(page, context, environment)
+        await use(menu)
+    },
+    administracionBotonAgregar: async ({ page, context }, use) => {
+        const menu = new AdministracionBotonAgregar(page, context, environment)
+        await use(menu)
+    },
+
+
+
+
 
 
 
@@ -214,26 +258,30 @@ const test = baseTest.extend<{
         const menu = new AdministracionGestionarVinculosFamiliares(page, context, environment)
         await use(menu)
     },
-
-
-
-
-
-
-
-    // GESTIONAR CAPACITACIONES
-    gestionarCapacitacionesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarCapacitacionesBuscadorDescripcion(page, context, environment)
+    administracionGestionarEstadosBeneficiario: async ({ page, context }, use) => {
+        const menu = new AdministracionGestionarEstadosBeneficiario(page, context, environment)
         await use(menu)
     },
-    administracionBotonExportExcel: async ({ page, context }, use) => {
-        const menu = new AdministracionBotonExportExcel(page, context, environment)
+    administracionGestionarCargos: async ({ page, context }, use) => {
+        const menu = new AdministracionGestionarCargos(page, context, environment)
         await use(menu)
     },
-    administracionBotonAgregar: async ({ page, context }, use) => {
-        const menu = new AdministracionBotonAgregar(page, context, environment)
+    administracionGestionarMotivosBaja: async ({ page, context }, use) => {
+        const menu = new AdministracionGestionarMotivosBaja(page, context, environment)
         await use(menu)
     },
+    administracionGestionarPresencia: async ({ page, context }, use) => {
+        const menu = new AdministracionGestionarPresencia(page, context, environment)
+        await use(menu)
+    },
+
+
+
+
+
+
+
+
 
 
 

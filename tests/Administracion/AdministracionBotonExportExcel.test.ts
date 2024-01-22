@@ -15,13 +15,44 @@ test.beforeEach(async ({ loginPage, menuAdministracion}) => {
     })
 })
 
-test('@Test @Administracion @Regression (IDGS-35) Verificar que al clickear el boton EXPORT en Capacitaciones funciona correctamente', async ({administracionGestionarCapacitaciones}) => {
+test('@Test @Administracion @Regression (IDGS-35) Verificar que al clickear el boton EXPORT Excel en Capacitaciones funciona correctamente', async ({administracionGestionarCapacitaciones}) => {
 
-    await test.step('Click en Gestionar Capacitaciones', async () => {
+    await test.step('Click el boton EXPORT en Capacitaciones', async () => {
         await administracionGestionarCapacitaciones.navegarAdministracionGestionarCapacitaciones()
     })
-
 })
+test('@Test @Administracion @Regression (IDGS-37) Verificar que al clickear el boton EXPORT Excel en Intereses funciona correctamente', async ({administracionGestionarIntereses}) => {
+
+    await test.step('Click el boton EXPORT en Intereses', async () => {
+        await administracionGestionarIntereses.navegarAdministracionGestionarIntereses()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-40) Verificar que al clickear el boton EXPORT Excel en Enfermedades funciona correctamente', async ({administracionGestionarEnfermedades}) => {
+
+    await test.step('Click el boton EXPORT en Enfermedades', async () => {
+        await administracionGestionarEnfermedades.navegarAdministracionGestionarEnfermedades()
+    })
+})
+test('Test @Administracion @Regression (IDGS-43) Verificar que al clickear el boton EXPORT Excel en Profesiones funciona correctamente', async ({administracionGestionarProfesiones}) => {
+
+    await test.step('Click el boton EXPORT Excel en Profesiones', async () => {
+        await administracionGestionarProfesiones.navegarAdministracionGestionarProfesiones()
+    })
+})
+test('Test @Administracion @Regression (IDGS-46) Verificar que al clickear el boton EXPORT Excel en Discapacidades funciona correctamente', async ({administracionGestionarDiscapacidades}) => {
+
+    await test.step('Click el boton EXPORT Excel en Discapacidades', async () => {
+        await administracionGestionarDiscapacidades.navegarAdministracionGestionarDiscapacidades()
+    })
+})
+
+
+
+
+
+
+
+
 
 test.afterEach(async ({ administracionBotonExportExcel }) => {
 
