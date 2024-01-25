@@ -33,16 +33,82 @@ test('@Test @Administracion @Regression (IDGS-40) Verificar que al clickear el b
         await administracionGestionarEnfermedades.navegarAdministracionGestionarEnfermedades()
     })
 })
-test('Test @Administracion @Regression (IDGS-42) Verificar que al clickear el boton +AGREGAR en Profesiones funciona correctamente', async ({administracionGestionarProfesiones}) => {
+test('@Test @Administracion @Regression (IDGS-42) Verificar que al clickear el boton +AGREGAR en Profesiones funciona correctamente', async ({administracionGestionarProfesiones}) => {
 
     await test.step('Click el boton +AGREGAR en Profesiones', async () => {
         await administracionGestionarProfesiones.navegarAdministracionGestionarProfesiones()
     })
 })
-test('Test @Administracion @Regression (IDGS-45) Verificar que al clickear el boton +AGREGAR en Discapacidades funciona correctamente', async ({administracionGestionarDiscapacidades}) => {
+test('@Test @Administracion @Regression (IDGS-45) Verificar que al clickear el boton +AGREGAR en Discapacidades funciona correctamente', async ({administracionGestionarDiscapacidades}) => {
 
     await test.step('Click el boton +AGREGAR en Discapacidades', async () => {
         await administracionGestionarDiscapacidades.navegarAdministracionGestionarDiscapacidades()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-48) Verificar que al clickear el boton +AGREGAR en Estado Civil funciona correctamente', async ({administracionGestionarEstadoCivil}) => {
+
+    await test.step('Click el boton +AGREGAR en Estado Civil', async () => {
+        await administracionGestionarEstadoCivil.navegarAdministracionGestionarEstadoCivil()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-51) Verificar que al clickear el boton +AGREGAR en Estado Civil funciona correctamente', async ({administracionGestionarTiposDeCarnet}) => {
+
+    await test.step('Click el boton +AGREGAR en Tipos de Carnet', async () => {
+        await administracionGestionarTiposDeCarnet.navegarAdministracionGestionarTiposDeCarnet()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Niveles de Idioma funciona correctamente', async ({administracionGestionarNivelesIdioma}) => {
+
+    await test.step('Click el boton +AGREGAR en Niveles de Idioma', async () => {
+        await administracionGestionarNivelesIdioma.navegarAdministracionGestionarNivelesIdioma()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Niveles de Estudio funciona correctamente', async ({administracionGestionarNivelEstudio}) => {
+
+    await test.step('Click el boton +AGREGAR en Nivel de Estudio', async () => {
+        await administracionGestionarNivelEstudio.navegarAdministracionGestionarNivelEstudio()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Niveles de Informatica funciona correctamente', async ({administracionGestionarNivelesInformatica}) => {
+
+    await test.step('Click el boton +AGREGAR en Nivel de Informatica', async () => {
+        await administracionGestionarNivelesInformatica.navegarAdministracionGestionarNivelesInformatica()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Idiomas funciona correctamente', async ({administracionGestionarIdiomas}) => {
+
+    await test.step('Click el boton +AGREGAR en Idiomas', async () => {
+        await administracionGestionarIdiomas.navegarAdministracionGestionarIdiomas()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Disponibilidad Horaria funciona correctamente', async ({administracionGestionarDisponibilidadHoraria}) => {
+
+    await test.step('Click el boton +AGREGAR en Disponibilidad Horaria', async () => {
+        await administracionGestionarDisponibilidadHoraria.navegarAdministracionGestionarDisponibilidadHoraria()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Sexo funciona correctamente', async ({administracionGestionarSexo}) => {
+
+    await test.step('Click el boton +AGREGAR en Sexo', async () => {
+        await administracionGestionarSexo.navegarAdministracionGestionarSexo()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Estados de Estudios funciona correctamente', async ({administracionGestionarEstadosEstudios}) => {
+
+    await test.step('Click el boton +AGREGAR en Estados de Estudios', async () => {
+        await administracionGestionarEstadosEstudios.navegarAdministracionGestionarEstadosEstudios()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Nacionalidades funciona correctamente', async ({administracionGestionarNacionalidades}) => {
+
+    await test.step('Click el boton +AGREGAR en Nacionalidades', async () => {
+        await administracionGestionarNacionalidades.navegarAdministracionGestionarNacionalidades()
+    })
+})
+test('@Test @Administracion @Regression (IDGS-54) Verificar que al clickear el boton +AGREGAR en Titulos funciona correctamente', async ({administracionGestionarTitulos}) => {
+
+    await test.step('Click el boton +AGREGAR en Titulos', async () => {
+        await administracionGestionarTitulos.navegarAdministracionGestionarTitulos()
     })
 })
 

@@ -85,6 +85,39 @@ import {
 import {
     GestionarDiscapacidadesBuscadorDescripcion
 } from '../pageObjectModel/header/Administracion/Discapacidades/GestionarDiscapacidadesBuscadorDescripcion'
+import {
+    GestionarEstadoCivilBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/EstadoCivil/GestionarEstadoCivilBuscadorDescripcion'
+import {
+    GestionarTiposCarnetBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/TiposCarnet/GestionarTiposCarnetBuscadorDescripcion'
+import {
+    GestionarNivelesIdiomaBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/NivelesIdioma/GestionarNivelesIdiomaBuscadorDescripcion'
+import {
+    GestionarNivelEstudioBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/NivelEstudio/GestionarNivelEstudioBuscadorDescripcion'
+import {
+    GestionarNivelesInformaticaBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/NivelesInformatica/GestionarNivelesInformaticaBuscadorDescripcion'
+import {
+    GestionarIdiomasBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Idiomas/GestionarIdiomasBuscadorDescripcion'
+import {
+    GestionarDisponibilidadHorariaBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/DisponibilidadHoraria/GestionarDisponibilidadHorariaBuscadorDescripcion'
+import {
+    GestionarSexoBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Sexo/GestionarSexoBuscadorDescripcion'
+import {
+    GestionarEstadosEstudiosBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/EstadosEstudios/GestionarEstadosEstudiosBuscadorDescripcion'
+import {
+    GestionarNacionalidadesBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Nacionalidades/GestionarNacionalidadesBuscadorDescripcion'
+import {
+    GestionarTitulosBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Titulos/GestionarTitulosBuscadorDescripcion'
 
 const environment = process.env.TEST || 'qa'
 
@@ -127,6 +160,17 @@ const test = baseTest.extend<{
     gestionarEnfermedadesBuscadorDescripcion: GestionarEnfermedadesBuscadorDescripcion
     gestionarProfesionesBuscadorDescripcion: GestionarProfesionesBuscadorDescripcion
     gestionarDiscapacidadesBuscadorDescripcion: GestionarDiscapacidadesBuscadorDescripcion
+    gestionarEstadoCivilBuscadorDescripcion: GestionarEstadoCivilBuscadorDescripcion
+    gestionarTiposCarnetBuscadorDescripcion: GestionarTiposCarnetBuscadorDescripcion
+    gestionarNivelesIdiomaBuscadorDescripcion: GestionarNivelesIdiomaBuscadorDescripcion
+    gestionarNivelEstudioBuscadorDescripcion: GestionarNivelEstudioBuscadorDescripcion
+    gestionarNivelesInformaticaBuscadorDescripcion: GestionarNivelesInformaticaBuscadorDescripcion
+    gestionarIdiomasBuscadorDescripcion: GestionarIdiomasBuscadorDescripcion
+    gestionarDisponibilidadHorariaBuscadorDescripcion: GestionarDisponibilidadHorariaBuscadorDescripcion
+    gestionarSexoBuscadorDescripcion: GestionarSexoBuscadorDescripcion
+    gestionarEstadosEstudiosBuscadorDescripcion: GestionarEstadosEstudiosBuscadorDescripcion
+    gestionarNacionalidadesBuscadorDescripcion: GestionarNacionalidadesBuscadorDescripcion
+    gestionarTitulosBuscadorDescripcion: GestionarTitulosBuscadorDescripcion
 
 
 }>({
@@ -165,6 +209,75 @@ const test = baseTest.extend<{
         const menu = new GestionarDiscapacidadesBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
+
+    // GESTIONAR ESTADO CIVIL
+    gestionarEstadoCivilBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarEstadoCivilBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR TIPO CARNET
+    gestionarTiposCarnetBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarTiposCarnetBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR NIVELES DE IDIOMA
+    gestionarNivelesIdiomaBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarNivelesIdiomaBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR NIVELES DE ESTUDIOS
+    gestionarNivelEstudioBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarNivelEstudioBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR NIVELES DE INFORMATICA
+    gestionarNivelesInformaticaBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarNivelesInformaticaBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR IDIOMAS
+    gestionarIdiomasBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarIdiomasBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR DISPONIBILIDAD HORARIA
+    gestionarDisponibilidadHorariaBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarDisponibilidadHorariaBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR SEXO
+    gestionarSexoBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarSexoBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR ESTADO DE ESTUDIOS | CAPACITACIONES
+    gestionarEstadosEstudiosBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarEstadosEstudiosBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR NACIONALIDADES
+    gestionarNacionalidadesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarNacionalidadesBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR TITULOS
+    gestionarTitulosBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarTitulosBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+
+
 
 
 
