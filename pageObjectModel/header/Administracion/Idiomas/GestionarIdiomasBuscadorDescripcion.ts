@@ -16,7 +16,7 @@ export class GestionarIdiomasBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['ESPA', 'FRAN', 'INGLES', 'INGLÉS']
+        const charArray = ['ESPA', 'FRAN', 'INGLES', 'INGLÉS', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vIDIOMADESCRIPCION'])[1]"
 
         for (const word of charArray) {

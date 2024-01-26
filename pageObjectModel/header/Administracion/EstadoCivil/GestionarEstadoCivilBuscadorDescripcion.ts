@@ -16,7 +16,7 @@ export class GestionarEstadoCivilBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['CASAD', 'SEPA', 'SICA', 'SOLT', 'VIVEN', 'VIUDO']
+        const charArray = ['CASAD', 'SEPA', 'SICA', 'SOLT', 'VIVEN', 'VIUDO', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vESTADOCIVILDESCRIPCION'])[1]"
 
         for (const word of charArray) {

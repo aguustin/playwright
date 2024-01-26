@@ -16,7 +16,7 @@ export class GestionarTiposCarnetBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['A', 'B', 'C', 'D', 'E', 'F']
+        const charArray = ['A', 'B', 'C', 'D', 'E', 'F','AD' , '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vCARNETDESCRIPCION'])[1]"
 
         for (const word of charArray) {

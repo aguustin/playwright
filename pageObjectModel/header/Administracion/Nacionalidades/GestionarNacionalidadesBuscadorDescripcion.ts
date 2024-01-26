@@ -16,7 +16,7 @@ export class GestionarNacionalidadesBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['FEM', 'MAS', 'OTRO', 'INO']
+        const charArray = ['FEM', 'MAS', 'OTRO', 'INO', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vNACIONALIDADDESCRIPCION'])[1]"
 
         for (const word of charArray) {

@@ -16,7 +16,7 @@ export class GestionarNivelEstudioBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['PRIM', 'SECU', 'TERC', 'ARIO', 'UNI']
+        const charArray = ['PRIM', 'SECU', 'TERC', 'ARIO', 'UNI', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vNIVELESTUDIODESCRIPCION'])[1]"
 
         for (const word of charArray) {

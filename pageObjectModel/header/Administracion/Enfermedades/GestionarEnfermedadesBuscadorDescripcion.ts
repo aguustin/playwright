@@ -16,7 +16,7 @@ export class GestionarEnfermedadesBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['ALERGIA', 'CANCER', 'DIGEST', 'ENFER', 'PIEL', 'INFEC']
+        const charArray = ['ALERGIA', 'CANCER', 'DIGEST', 'ENFER', 'PIEL', 'INFEC', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vENFERMEDADDESC'])[1]"
 
         for (const word of charArray) {

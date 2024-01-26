@@ -118,6 +118,21 @@ import {
 import {
     GestionarTitulosBuscadorDescripcion
 } from '../pageObjectModel/header/Administracion/Titulos/GestionarTitulosBuscadorDescripcion'
+import {
+    GestionarVinculosFamiliaresBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/VinculosFamiliares/GestionarVinculosFamiliaresBuscadorDescripcion'
+import {
+    GestionarEstadosBeneficiarioBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/EstadosBeneficiario/GestionarEstadosBeneficiarioBuscadorDescripcion'
+import {
+    GestionarCargosBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Cargos/GestionarCargosBuscadorDescripcion'
+import {
+    GestionarMotivosBajaBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/MotivosBaja/GestionarMotivosBajaBuscadorDescripcion'
+import {
+    GestionarPresenciaBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Presencia/GestionarPresenciaBuscadorDescripcion'
 
 const environment = process.env.TEST || 'qa'
 
@@ -171,6 +186,11 @@ const test = baseTest.extend<{
     gestionarEstadosEstudiosBuscadorDescripcion: GestionarEstadosEstudiosBuscadorDescripcion
     gestionarNacionalidadesBuscadorDescripcion: GestionarNacionalidadesBuscadorDescripcion
     gestionarTitulosBuscadorDescripcion: GestionarTitulosBuscadorDescripcion
+    gestionarVinculosFamiliaresBuscadorDescripcion: GestionarVinculosFamiliaresBuscadorDescripcion
+    gestionarEstadosBeneficiarioBuscadorDescripcion: GestionarEstadosBeneficiarioBuscadorDescripcion
+    gestionarCargosBuscadorDescripcion: GestionarCargosBuscadorDescripcion
+    gestionarMotivosBajaBuscadorDescripcion: GestionarMotivosBajaBuscadorDescripcion
+    gestionarPresenciaBuscadorDescripcion: GestionarPresenciaBuscadorDescripcion
 
 
 }>({
@@ -273,6 +293,36 @@ const test = baseTest.extend<{
     // GESTIONAR TITULOS
     gestionarTitulosBuscadorDescripcion: async ({ page, context }, use) => {
         const menu = new GestionarTitulosBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR VINCULOS FAMILIARES
+    gestionarVinculosFamiliaresBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarVinculosFamiliaresBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR ESTADOS DE BENEFICIARIO
+    gestionarEstadosBeneficiarioBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarEstadosBeneficiarioBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR CARGOS
+    gestionarCargosBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarCargosBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR MOTIVOS DE BAJA
+    gestionarMotivosBajaBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarMotivosBajaBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+    // GESTIONAR PRESENCIA
+    gestionarPresenciaBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new GestionarPresenciaBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
 

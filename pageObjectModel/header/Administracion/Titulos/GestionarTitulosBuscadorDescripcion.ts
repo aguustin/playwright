@@ -16,7 +16,7 @@ export class GestionarTitulosBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['SISTE', 'ABOG', 'TECN', 'DIAG', 'TURA']
+        const charArray = ['SISTE', 'ABOG', 'TECN', 'DIAG', 'TURA', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vTITULONOMBRE'])[1]"
 
         for (const word of charArray) {

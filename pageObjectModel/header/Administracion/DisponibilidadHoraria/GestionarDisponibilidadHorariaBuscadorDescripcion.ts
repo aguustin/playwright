@@ -16,7 +16,7 @@ export class GestionarDisponibilidadHorariaBuscadorDescripcion extends BasePage 
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['FULL', 'ANA', 'ARDE', 'OCHE', 'MA', 'TIME']
+        const charArray = ['FULL', 'ANA', 'ARDE', 'OCHE', 'MA', 'TIME', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vDISPONIBILIDADDESCRIPCION'])[1]"
 
         for (const word of charArray) {

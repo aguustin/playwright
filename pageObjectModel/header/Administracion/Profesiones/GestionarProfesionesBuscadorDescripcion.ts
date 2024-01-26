@@ -16,7 +16,7 @@ export class GestionarProfesionesBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['TÉCNICO', 'TECNICO', 'DESARR', ' SOFT', 'WARE']
+        const charArray = ['TÉCNICO', 'TECNICO', 'DESARR', ' SOFT', 'WARE', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vPROFESIONDESCRIPCION'])[1]"
 
         for (const word of charArray) {

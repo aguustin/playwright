@@ -16,7 +16,7 @@ export class GestionarNivelesIdiomaBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['ZADO', 'BAJO', 'INTER']
+        const charArray = ['ZADO', 'BAJO', 'INTER', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vNIVELIDIOMADESCRIPCION'])[1]"
 
         for (const word of charArray) {

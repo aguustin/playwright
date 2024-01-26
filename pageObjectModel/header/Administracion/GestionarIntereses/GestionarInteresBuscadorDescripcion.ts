@@ -16,7 +16,7 @@ export class GestionarInteresBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['ADMIN', 'ARTES', 'CARP', 'INFO', 'FOTO', 'ELECT']
+        const charArray = ['ADMIN', 'ARTES', 'CARP', 'INFO', 'FOTO', 'ELECT', '!"#$%&/()=?¡¿/*-+']
         const input = "(//input[@id='vINTERESDESCRIPCION'])[1]"
 
         for (const word of charArray) {
