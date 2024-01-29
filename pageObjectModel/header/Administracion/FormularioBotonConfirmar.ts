@@ -2,9 +2,9 @@ import { Page, BrowserContext, Locator, expect } from '@playwright/test'
 import { BasePage } from '../../commonActions'
 import { loadEnvironmentConfig, loadTestDataConfig } from '../../../config/configLoader'
 
-export class AdministracionGestionarTiposDeCarnet extends BasePage {
+export class FormularioBotonConfirmar extends BasePage {
 
-    readonly TIPOS_CARNET: Locator
+    readonly BOTON_CONFIRMAR: Locator
 
     private env: any
 
@@ -12,16 +12,17 @@ export class AdministracionGestionarTiposDeCarnet extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.TIPOS_CARNET = this.page.locator("(//a[normalize-space()='Gestionar Tipos de carnet'])[1]")
+        this.BOTON_CONFIRMAR = this.page.locator("(//input[@id='BTN_ENTER'])[1]")
     }
-    async clickGestionarTiposDeCarnet(): Promise<void> {
-        await this.click(this.TIPOS_CARNET)
-        await this.page.waitForLoadState("domcontentloaded")
+
+    async clickBotonConfirmar(): Promise<void> {
+        await this.click(this.BOTON_CONFIRMAR)
+        await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
         await this.page.waitForTimeout(3000)
     }
 
-    async navegarAdministracionGestionarTiposDeCarnet(): Promise<void> {
-        await this.clickGestionarTiposDeCarnet()
+    async navegarFormularioBotonConfirmar(): Promise<void> {
+        await this.clickBotonConfirmar()
     }
 }

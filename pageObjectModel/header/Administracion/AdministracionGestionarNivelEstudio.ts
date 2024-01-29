@@ -18,6 +18,7 @@ export class AdministracionGestionarNivelEstudio extends BasePage {
         await this.click(this.NIVEL_ESTUDIO)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
+        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarNivelEstudio(): Promise<void> {

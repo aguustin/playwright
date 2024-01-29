@@ -18,6 +18,7 @@ export class AdministracionGestionarDisponibilidadHoraria extends BasePage {
         await this.click(this.DISPONIBILIDAD_HORARIA)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
+        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarDisponibilidadHoraria(): Promise<void> {

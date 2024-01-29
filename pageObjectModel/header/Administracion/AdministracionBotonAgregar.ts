@@ -4,7 +4,7 @@ import { loadEnvironmentConfig, loadTestDataConfig } from '../../../config/confi
 
 export class AdministracionBotonAgregar extends BasePage {
 
-    readonly AGREGAR: Locator
+    readonly BOTON_CREAR: Locator
 
     private env: any
 
@@ -12,11 +12,13 @@ export class AdministracionBotonAgregar extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.AGREGAR = this.page.locator("(//input[@id='BTNAGREGAR'])[1]")
+        // this.BOTON_CREAR = this.page.locator("(//input[@id='BTNAGREGAR'])[1]")
+        this.BOTON_CREAR = this.page.locator('//input [@id="BTNAGREGAR"]')
     }
+
     async clickBotonAgregar(): Promise<void> {
-        await this.click(this.AGREGAR)
-        await this.page.waitForLoadState("domcontentloaded")
+        await this.click(this.BOTON_CREAR)
+        await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
         await this.page.waitForTimeout(3000)
     }

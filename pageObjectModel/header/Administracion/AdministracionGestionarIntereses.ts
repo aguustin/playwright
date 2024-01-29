@@ -18,6 +18,7 @@ export class AdministracionGestionarIntereses extends BasePage {
         await this.click(this.INTERESES)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
+        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarIntereses(): Promise<void> {

@@ -133,6 +133,10 @@ import {
 import {
     GestionarPresenciaBuscadorDescripcion
 } from '../pageObjectModel/header/Administracion/Presencia/GestionarPresenciaBuscadorDescripcion'
+import {
+    GestionarPresenciaFormularioCrear
+} from '../pageObjectModel/header/Administracion/Presencia/GestionarPresenciaFormularioCrear'
+import { FormularioBotonConfirmar } from '../pageObjectModel/header/Administracion/FormularioBotonConfirmar'
 
 const environment = process.env.TEST || 'qa'
 
@@ -191,6 +195,8 @@ const test = baseTest.extend<{
     gestionarCargosBuscadorDescripcion: GestionarCargosBuscadorDescripcion
     gestionarMotivosBajaBuscadorDescripcion: GestionarMotivosBajaBuscadorDescripcion
     gestionarPresenciaBuscadorDescripcion: GestionarPresenciaBuscadorDescripcion
+    gestionarPresenciaFormularioCrear: GestionarPresenciaFormularioCrear
+    formularioBotonConfirmar: FormularioBotonConfirmar
 
 
 }>({
@@ -325,6 +331,10 @@ const test = baseTest.extend<{
         const menu = new GestionarPresenciaBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
+    gestionarPresenciaFormularioCrear: async ({ page, context }, use) => {
+        const menu = new GestionarPresenciaFormularioCrear(page, context, environment)
+        await use(menu)
+    },
 
 
 
@@ -340,6 +350,12 @@ const test = baseTest.extend<{
         const menu = new AdministracionBotonAgregar(page, context, environment)
         await use(menu)
     },
+    formularioBotonConfirmar: async ({ page, context }, use) => {
+        const menu = new FormularioBotonConfirmar(page, context, environment)
+        await use(menu)
+    },
+
+
 
 
 

@@ -18,6 +18,7 @@ export class AdministracionGestionarTitulos extends BasePage {
         await this.click(this.TITULOS)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
+        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarTitulos(): Promise<void> {
