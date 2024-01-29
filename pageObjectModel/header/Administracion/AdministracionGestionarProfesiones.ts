@@ -18,7 +18,6 @@ export class AdministracionGestionarProfesiones extends BasePage {
         await this.click(this.PROFESIONES)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarProfesiones(): Promise<void> {

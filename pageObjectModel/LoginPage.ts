@@ -23,7 +23,7 @@ export class LoginPage extends BasePage {
         await this.goto(this.env.baseURL)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
+        // await this.page.waitForTimeout(3000)
     }
 
     async ingresoCredenciales(): Promise<void> {

@@ -25,7 +25,6 @@ export class GestionarEstadoCivilBuscadorDescripcion extends BasePage {
             await this.fill(this.BUSCADOR_DESCRIPCION, word)
             await this.page.waitForLoadState("domcontentloaded")
             await this.page.waitForFunction(() => document.readyState === 'complete')
-            await this.page.waitForTimeout(1000)
         }
     }
 

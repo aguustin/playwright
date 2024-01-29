@@ -16,8 +16,8 @@ export class GestionarPresenciaBuscadorDescripcion extends BasePage {
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
-        const charArray = ['A', 'B', '+', '!"#$%&/()=?¡¿/*-+']
-        const input = ""
+        const charArray = ['A', 'B', 'C', '+', 'A+', 'AD' , '!"#$%&/()=?¡¿/*-+']
+        const input = "(//input[@id='vPRESENCIADESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)
@@ -25,7 +25,6 @@ export class GestionarPresenciaBuscadorDescripcion extends BasePage {
             await this.fill(this.BUSCADOR_DESCRIPCION, word)
             await this.page.waitForLoadState("domcontentloaded")
             await this.page.waitForFunction(() => document.readyState === 'complete')
-            await this.page.waitForTimeout(1000)
         }
     }
 

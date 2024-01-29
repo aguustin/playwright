@@ -18,7 +18,6 @@ export class AdministracionGestionarVinculosFamiliares extends BasePage {
         await this.click(this.VINCULOS_FAMILIARES)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarVinculosFamiliares(): Promise<void> {

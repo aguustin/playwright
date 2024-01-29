@@ -18,7 +18,6 @@ export class AdministracionGestionarEstadosBeneficiario extends BasePage {
         await this.click(this.ESTADOS_BENEFICIARIO)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarEstadosBeneficiario(): Promise<void> {

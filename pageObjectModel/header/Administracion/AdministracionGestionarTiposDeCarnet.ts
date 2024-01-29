@@ -18,7 +18,6 @@ export class AdministracionGestionarTiposDeCarnet extends BasePage {
         await this.click(this.TIPOS_CARNET)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarTiposDeCarnet(): Promise<void> {

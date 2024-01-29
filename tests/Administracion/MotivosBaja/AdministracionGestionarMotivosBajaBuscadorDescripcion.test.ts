@@ -18,7 +18,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarM
     })
 })
 
-test('@Test @Administracion @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Motivos de Baja funciona correctamente', async ({gestionarMotivosBajaBuscadorDescripcion}) => {
+test('@GestionarCapacitaciones @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Motivos de Baja funciona correctamente', async ({gestionarMotivosBajaBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
         await gestionarMotivosBajaBuscadorDescripcion.navegarGestionarMotivosBajaBuscadorDescripcion()

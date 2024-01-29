@@ -18,7 +18,6 @@ export class AdministracionGestionarIdiomas extends BasePage {
         await this.click(this.IDIOMA)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarIdiomas(): Promise<void> {

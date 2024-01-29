@@ -18,7 +18,6 @@ export class AdministracionGestionarEstadoCivil extends BasePage {
         await this.click(this.ESTADO_CIVIL)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarEstadoCivil(): Promise<void> {
