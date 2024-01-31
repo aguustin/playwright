@@ -1,6 +1,6 @@
 import test from '../../../config/testManager'
 
-test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarPresencia, administracionBotonAgregar }) => {
+test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarPresencia, administracionBotonAgregar, modalFormularioHeader }) => {
     await test.step('Navegar en la url de Gestion Social', async () => {
         await loginPage.navigateToLoginPage()
     })
@@ -19,18 +19,24 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarP
     await test.step('Click en el boton +CREAR', async () => {
         await administracionBotonAgregar.navegarAdministracionBotonAgregar()
     })
+    // await test.step('Click en el header del modal del formulario', async () => {
+    //     await modalFormularioHeader.navegarModalFormularioHeader()
+    // })
 })
 
-test('@Test @FormularioCrear @Regression (IDGS-53) Verificar que al ingresar datos en el formulario de Presencia y clickear el boton CONFIRMAR los datos se almacenan correctamente en BD', async ({gestionarPresenciaFormularioCrear}) => {
+test('@Test @FormularioCrear @Regression (IDGS-53) Verificar que al ingresar datos en el formulario de Presencia y clickear el boton CONFIRMAR los datos se almacenan correctamente en BD', async ({modalFormularioBotonConfirmar}) => {
 
-    await test.step('Ingresar datos en el input Descripcion', async () => {
-        await gestionarPresenciaFormularioCrear.ingresoBuscadorDescripcion()
-    })
-})
-
-test.afterEach(async ({ formularioBotonConfirmar }) => {
-
+    // await test.step('Ingresar datos en el input Descripcion', async () => {
+    //     await gestionarPresenciaFormularioCrear.ingresoInputDescripcion()
+    // })
     await test.step('Click en el boton CONFIRMAR', async () => {
-        await formularioBotonConfirmar.navegarFormularioBotonConfirmar()
+        await modalFormularioBotonConfirmar.navegarModalFormularioBotonConfirmar()
     })
 })
+
+// test.afterEach(async ({ modalFormularioBotonConfirmar }) => {
+//
+//     await test.step('Click en el boton CONFIRMAR', async () => {
+//         await modalFormularioBotonConfirmar.navegarModalFormularioBotonConfirmar()
+//     })
+// })

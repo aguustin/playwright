@@ -18,7 +18,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarV
     })
 })
 
-test('@GestionarCapacitaciones @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Vinculos Familiares funciona correctamente', async ({gestionarVinculosFamiliaresBuscadorDescripcion}) => {
+test('@Gestionar @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Vinculos Familiares funciona correctamente', async ({gestionarVinculosFamiliaresBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
         await gestionarVinculosFamiliaresBuscadorDescripcion.navegarGestionarVinculosFamiliaresBuscadorDescripcion()

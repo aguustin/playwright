@@ -18,7 +18,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarD
     })
 })
 
-test('@GestionarCapacitaciones @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Disponibilidad Horaria funciona correctamente', async ({gestionarDisponibilidadHorariaBuscadorDescripcion}) => {
+test('@Gestionar @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Disponibilidad Horaria funciona correctamente', async ({gestionarDisponibilidadHorariaBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
         await gestionarDisponibilidadHorariaBuscadorDescripcion.navegarGestionarDisponibilidadHorariaBuscadorDescripcion()

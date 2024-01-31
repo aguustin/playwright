@@ -18,7 +18,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarT
     })
 })
 
-test('@GestionarCapacitaciones @Regression (IDGS-50) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Tipos de Carnet funciona correctamente', async ({gestionarTiposCarnetBuscadorDescripcion}) => {
+test('@Gestionar @Regression (IDGS-50) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Tipos de Carnet funciona correctamente', async ({gestionarTiposCarnetBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
         await gestionarTiposCarnetBuscadorDescripcion.navegarGestionarTiposCarnetBuscadorDescripcion()

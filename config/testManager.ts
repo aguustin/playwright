@@ -136,7 +136,12 @@ import {
 import {
     GestionarPresenciaFormularioCrear
 } from '../pageObjectModel/header/Administracion/Presencia/GestionarPresenciaFormularioCrear'
-import { FormularioBotonConfirmar } from '../pageObjectModel/header/Administracion/FormularioBotonConfirmar'
+import { ModalFormularioBotonConfirmar } from '../pageObjectModel/header/Administracion/ModalFormularioBotonConfirmar'
+import { ModalFormularioHeader } from '../pageObjectModel/header/Administracion/ModalFormularioHeader'
+import {
+    PrestacionesBuscadorDescripcion
+} from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesBuscadorDescripcion'
+import { Prestaciones } from '../pageObjectModel/header/Administracion/Prestaciones/Prestaciones'
 
 const environment = process.env.TEST || 'qa'
 
@@ -196,14 +201,28 @@ const test = baseTest.extend<{
     gestionarMotivosBajaBuscadorDescripcion: GestionarMotivosBajaBuscadorDescripcion
     gestionarPresenciaBuscadorDescripcion: GestionarPresenciaBuscadorDescripcion
     gestionarPresenciaFormularioCrear: GestionarPresenciaFormularioCrear
-    formularioBotonConfirmar: FormularioBotonConfirmar
-
+    modalFormularioBotonConfirmar: ModalFormularioBotonConfirmar
+    modalFormularioHeader: ModalFormularioHeader
+    prestacionesBuscadorDescripcion: PrestacionesBuscadorDescripcion
+    prestaciones: Prestaciones
 
 }>({
     loginPage: async ({ page, context }, use) => {
         const loginPage = new LoginPage(page, context, environment)
         await use(loginPage)
     },
+
+    // PRESTACIONES
+    prestaciones: async ({ page, context }, use) => {
+        const menu = new Prestaciones(page, context, environment)
+        await use(menu)
+    },
+    prestacionesBuscadorDescripcion: async ({ page, context }, use) => {
+        const menu = new PrestacionesBuscadorDescripcion(page, context, environment)
+        await use(menu)
+    },
+
+
 
 
     // GESTIONAR CAPACITACIONES
@@ -350,10 +369,16 @@ const test = baseTest.extend<{
         const menu = new AdministracionBotonAgregar(page, context, environment)
         await use(menu)
     },
-    formularioBotonConfirmar: async ({ page, context }, use) => {
-        const menu = new FormularioBotonConfirmar(page, context, environment)
+    modalFormularioBotonConfirmar: async ({ page, context }, use) => {
+        const menu = new ModalFormularioBotonConfirmar(page, context, environment)
         await use(menu)
     },
+    modalFormularioHeader: async ({ page, context }, use) => {
+        const menu = new ModalFormularioHeader(page, context, environment)
+        await use(menu)
+    },
+
+
 
 
 

@@ -1,6 +1,6 @@
 import test from '../../../config/testManager'
 
-test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarMotivosBaja }) => {
+test.beforeEach(async ({ loginPage, menuAdministracion, prestaciones }) => {
     await test.step('Navegar en la url de Gestion Social', async () => {
         await loginPage.navigateToLoginPage()
     })
@@ -13,14 +13,14 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarM
     await test.step('Click en el icono Administracion', async () => {
         await menuAdministracion.navegarAccederMenuAdministracion()
     })
-    await test.step('Click en Gestionar Motivos de Baja', async () => {
-        await administracionGestionarMotivosBaja.navegarAdministracionGestionarMotivosBaja()
+    await test.step('Click en Prestaciones', async () => {
+        await prestaciones.navegarPrestaciones()
     })
 })
 
-test('@Gestionar @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Motivos de Baja funciona correctamente', async ({gestionarMotivosBajaBuscadorDescripcion}) => {
+test('@Prestaciones @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Prestaciones funciona correctamente', async ({prestacionesBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
-        await gestionarMotivosBajaBuscadorDescripcion.navegarGestionarMotivosBajaBuscadorDescripcion()
+        await prestacionesBuscadorDescripcion.navegarPrestacionesBuscadorDescripcion()
     })
 })

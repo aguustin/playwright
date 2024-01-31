@@ -18,7 +18,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarC
     })
 })
 
-test('@GestionarCapacitaciones @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Cargos funciona correctamente', async ({gestionarCargosBuscadorDescripcion}) => {
+test('@Gestionar @Regression (IDGS-53) Verificar que al ingresar datos validos en el buscador Descripcion en Gestionar Cargos funciona correctamente', async ({gestionarCargosBuscadorDescripcion}) => {
 
     await test.step('Ingresar datos en el buscador Descripcion', async () => {
         await gestionarCargosBuscadorDescripcion.navegarGestionarCargosBuscadorDescripcion()
