@@ -13,7 +13,7 @@ import {
 } from '../pageObjectModel/header/Administracion/AdministracionGestionarCapacitaciones'
 import {
     GestionarCapacitacionesBuscadorDescripcion
-} from '../pageObjectModel/header/Administracion/GestionarCapacitaciones/GestionarCapacitacionesBuscadorDescripcion'
+} from '../pageObjectModel/header/Administracion/Capacitaciones/GestionarCapacitacionesBuscadorDescripcion'
 import {
     AdministracionBotonExportExcel
 } from '../pageObjectModel/header/Administracion/AdministracionBotonExportExcel'
@@ -75,7 +75,7 @@ import {
 } from '../pageObjectModel/header/Administracion/AdministracionGestionarPresencia'
 import {
     GestionarInteresBuscadorDescripcion
-} from '../pageObjectModel/header/Administracion/GestionarIntereses/GestionarInteresBuscadorDescripcion'
+} from '../pageObjectModel/header/Administracion/Intereses/GestionarInteresBuscadorDescripcion'
 import {
     GestionarEnfermedadesBuscadorDescripcion
 } from '../pageObjectModel/header/Administracion/Enfermedades/GestionarEnfermedadesBuscadorDescripcion'
@@ -142,6 +142,10 @@ import {
     PrestacionesBuscadorDescripcion
 } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesBuscadorDescripcion'
 import { Prestaciones } from '../pageObjectModel/header/Administracion/Prestaciones/Prestaciones'
+import {
+    PrestacionesBotonCrear
+} from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesBotonCrear'
+import { PrestacionesFiltroVer } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesFiltroVer'
 
 const environment = process.env.TEST || 'qa'
 
@@ -205,12 +209,15 @@ const test = baseTest.extend<{
     modalFormularioHeader: ModalFormularioHeader
     prestacionesBuscadorDescripcion: PrestacionesBuscadorDescripcion
     prestaciones: Prestaciones
+    prestacionesBotonCrear :PrestacionesBotonCrear
+    prestacionesFiltroVer: PrestacionesFiltroVer
 
 }>({
     loginPage: async ({ page, context }, use) => {
         const loginPage = new LoginPage(page, context, environment)
         await use(loginPage)
     },
+
 
     // PRESTACIONES
     prestaciones: async ({ page, context }, use) => {
@@ -221,6 +228,16 @@ const test = baseTest.extend<{
         const menu = new PrestacionesBuscadorDescripcion(page, context, environment)
         await use(menu)
     },
+    prestacionesBotonCrear: async ({ page, context }, use) => {
+        const menu = new PrestacionesBotonCrear(page, context, environment)
+        await use(menu)
+    },
+    prestacionesFiltroVer: async ({ page, context }, use) => {
+        const menu = new PrestacionesFiltroVer(page, context, environment)
+        await use(menu)
+    },
+
+
 
 
 

@@ -24,7 +24,7 @@ test.beforeEach(async ({ loginPage, menuAdministracion, administracionGestionarP
     // })
 })
 
-test('@Test @FormularioCrear @Regression (IDGS-53) Verificar que al ingresar datos en el formulario de Presencia y clickear el boton CONFIRMAR los datos se almacenan correctamente en BD', async ({modalFormularioBotonConfirmar}) => {
+test('@ABCD @FormularioCrear @Regression (IDGS-53) Verificar que al ingresar datos en el formulario de Presencia y clickear el boton CONFIRMAR los datos se almacenan correctamente en BD', async ({modalFormularioBotonConfirmar}) => {
 
     // await test.step('Ingresar datos en el input Descripcion', async () => {
     //     await gestionarPresenciaFormularioCrear.ingresoInputDescripcion()
