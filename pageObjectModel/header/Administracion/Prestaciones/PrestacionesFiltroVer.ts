@@ -153,7 +153,6 @@ export class PrestacionesFiltroVer extends BasePage {
         await this.clickCheckboxCategoria()
         await this.clickUnCheckboxCupo()
         await this.clickCheckboxCupo()
-
         await this.clickUnCheckboxEstado()
         await this.clickCheckboxEstado()
 
