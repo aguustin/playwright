@@ -19,7 +19,6 @@ export class Prestaciones extends BasePage {
         await this.click(this.PRESTACIONES)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarPrestaciones(): Promise<void> {
