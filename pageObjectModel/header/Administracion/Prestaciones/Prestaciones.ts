@@ -12,7 +12,7 @@ export class Prestaciones extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.PRESTACIONES = this.page.locator("(//a[normalize-space()='Prestaciones'])[1]")
+        this.PRESTACIONES = this.page.locator('//span [@id="TEXTBLOCKPRESTACIONES"]')
     }
 
     async clickPrestaciones(): Promise<void> {

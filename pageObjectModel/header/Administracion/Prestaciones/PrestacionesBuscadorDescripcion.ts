@@ -5,7 +5,6 @@ import { loadEnvironmentConfig, loadTestDataConfig } from '../../../../config/co
 export class PrestacionesBuscadorDescripcion extends BasePage {
 
     readonly BUSCADOR_DESCRIPCION: Locator
-    readonly TABLA: Locator
 
     private env: any
 
@@ -14,8 +13,6 @@ export class PrestacionesBuscadorDescripcion extends BasePage {
         this.env = loadEnvironmentConfig(environment)
 
         this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vPRESTACIONDESCRIPCION'])[1]")
-        this.TABLA = this.page.locator('//table [@id="Grid2ContainerTbl"]')
-
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['ITAT', '/*-+', 'INC', '!"#$%&', 'REN', '!"#$%&/()=?¡¿/*-+']

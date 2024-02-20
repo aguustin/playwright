@@ -12,13 +12,12 @@ export class AdministracionGestionarPresencia extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.PRESENCIA = this.page.locator("(//a[normalize-space()='Gestionar Presencia'])[1]")
+        this.PRESENCIA = this.page.locator('//span [@id="TXTBLOCKTIPOPRESENCIA"]')
     }
     async clickGestionarPresencia(): Promise<void> {
         await this.click(this.PRESENCIA)
         await this.page.waitForLoadState("domcontentloaded")
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
 
     async navegarAdministracionGestionarPresencia(): Promise<void> {

@@ -146,6 +146,10 @@ import {
     PrestacionesBotonCrear
 } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesBotonCrear'
 import { PrestacionesFiltroVer } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesFiltroVer'
+import {
+    GestionarCapacitacionesFormulario
+} from '../pageObjectModel/header/Administracion/Capacitaciones/GestionarCapacitacionesFormulario'
+import { PrestacionesFormulario } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesFormulario'
 
 const environment = process.env.TEST || 'qa'
 
@@ -211,32 +215,32 @@ const test = baseTest.extend<{
     prestaciones: Prestaciones
     prestacionesBotonCrear :PrestacionesBotonCrear
     prestacionesFiltroVer: PrestacionesFiltroVer
+    gestionarCapacitacionesFormulario: GestionarCapacitacionesFormulario
+    prestacionesFormulario: PrestacionesFormulario
+
 
 }>({
     loginPage: async ({ page, context }, use) => {
-        const loginPage = new LoginPage(page, context, environment)
-        await use(loginPage)
+        await use(new LoginPage(page, context, environment))
     },
 
 
     // PRESTACIONES
     prestaciones: async ({ page, context }, use) => {
-        const menu = new Prestaciones(page, context, environment)
-        await use(menu)
+        await use(new Prestaciones(page, context, environment))
     },
     prestacionesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new PrestacionesBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new PrestacionesBuscadorDescripcion(page, context, environment))
     },
     prestacionesBotonCrear: async ({ page, context }, use) => {
-        const menu = new PrestacionesBotonCrear(page, context, environment)
-        await use(menu)
+        await use(new PrestacionesBotonCrear(page, context, environment))
     },
     prestacionesFiltroVer: async ({ page, context }, use) => {
-        const menu = new PrestacionesFiltroVer(page, context, environment)
-        await use(menu)
+        await use(new PrestacionesFiltroVer(page, context, environment))
     },
-
+    prestacionesFormulario: async ({ page, context }, use) => {
+        await use(new PrestacionesFormulario(page, context, environment))
+    },
 
 
 
@@ -244,303 +248,234 @@ const test = baseTest.extend<{
 
     // GESTIONAR CAPACITACIONES
     gestionarCapacitacionesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarCapacitacionesBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarCapacitacionesBuscadorDescripcion(page, context, environment))
     },
+    gestionarCapacitacionesFormulario: async ({ page, context }, use) => {
+        await use(new GestionarCapacitacionesFormulario(page, context, environment))
+    },
+
+
+
+
+
 
     // GESTIONAR INTERES
     gestionarInteresBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarInteresBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarInteresBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR ENFERMEDADES
     gestionarEnfermedadesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarEnfermedadesBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarEnfermedadesBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR PROFESIONES
     gestionarProfesionesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarProfesionesBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarProfesionesBuscadorDescripcion(page, context, environment))
     },
+
 
     // GESTIONAR DISCAPACIDADES
     gestionarDiscapacidadesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarDiscapacidadesBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarDiscapacidadesBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR ESTADO CIVIL
     gestionarEstadoCivilBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarEstadoCivilBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarEstadoCivilBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR TIPO CARNET
     gestionarTiposCarnetBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarTiposCarnetBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarTiposCarnetBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR NIVELES DE IDIOMA
     gestionarNivelesIdiomaBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarNivelesIdiomaBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarNivelesIdiomaBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR NIVELES DE ESTUDIOS
     gestionarNivelEstudioBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarNivelEstudioBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarNivelEstudioBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR NIVELES DE INFORMATICA
     gestionarNivelesInformaticaBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarNivelesInformaticaBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarNivelesInformaticaBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR IDIOMAS
     gestionarIdiomasBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarIdiomasBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarIdiomasBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR DISPONIBILIDAD HORARIA
     gestionarDisponibilidadHorariaBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarDisponibilidadHorariaBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarDisponibilidadHorariaBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR SEXO
     gestionarSexoBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarSexoBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarSexoBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR ESTADO DE ESTUDIOS | CAPACITACIONES
     gestionarEstadosEstudiosBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarEstadosEstudiosBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarEstadosEstudiosBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR NACIONALIDADES
     gestionarNacionalidadesBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarNacionalidadesBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarNacionalidadesBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR TITULOS
     gestionarTitulosBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarTitulosBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarTitulosBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR VINCULOS FAMILIARES
     gestionarVinculosFamiliaresBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarVinculosFamiliaresBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarVinculosFamiliaresBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR ESTADOS DE BENEFICIARIO
     gestionarEstadosBeneficiarioBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarEstadosBeneficiarioBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarEstadosBeneficiarioBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR CARGOS
     gestionarCargosBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarCargosBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarCargosBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR MOTIVOS DE BAJA
     gestionarMotivosBajaBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarMotivosBajaBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarMotivosBajaBuscadorDescripcion(page, context, environment))
     },
 
     // GESTIONAR PRESENCIA
     gestionarPresenciaBuscadorDescripcion: async ({ page, context }, use) => {
-        const menu = new GestionarPresenciaBuscadorDescripcion(page, context, environment)
-        await use(menu)
+        await use(new GestionarPresenciaBuscadorDescripcion(page, context, environment))
     },
     gestionarPresenciaFormularioCrear: async ({ page, context }, use) => {
-        const menu = new GestionarPresenciaFormularioCrear(page, context, environment)
-        await use(menu)
+        await use(new GestionarPresenciaFormularioCrear(page, context, environment))
     },
 
 
 
-
-
-
-
+    // ELEMENTOS COMUNES
     administracionBotonExportExcel: async ({ page, context }, use) => {
-        const menu = new AdministracionBotonExportExcel(page, context, environment)
-        await use(menu)
+        await use(new AdministracionBotonExportExcel(page, context, environment))
     },
     administracionBotonAgregar: async ({ page, context }, use) => {
-        const menu = new AdministracionBotonAgregar(page, context, environment)
-        await use(menu)
+        await use(new AdministracionBotonAgregar(page, context, environment))
     },
     modalFormularioBotonConfirmar: async ({ page, context }, use) => {
-        const menu = new ModalFormularioBotonConfirmar(page, context, environment)
-        await use(menu)
+        await use(new ModalFormularioBotonConfirmar(page, context, environment))
     },
     modalFormularioHeader: async ({ page, context }, use) => {
-        const menu = new ModalFormularioHeader(page, context, environment)
-        await use(menu)
+        await use(new ModalFormularioHeader(page, context, environment))
     },
-
-
-
-
-
-
-
-
-
 
 
 
     // ADMINISTRACION
     administracionGestionarCapacitaciones: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarCapacitaciones(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarCapacitaciones(page, context, environment))
     },
     administracionGestionarIntereses: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarIntereses(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarIntereses(page, context, environment))
     },
     administracionGestionarEnfermedades: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarEnfermedades(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarEnfermedades(page, context, environment))
     },
     administracionGestionarProfesiones: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarProfesiones(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarProfesiones(page, context, environment))
     },
     administracionListadoBeneficiariosValidados: async ({ page, context }, use) => {
-        const menu = new AdministracionListadoBeneficiariosValidados(page, context, environment)
-        await use(menu)
+        await use(new AdministracionListadoBeneficiariosValidados(page, context, environment))
     },
     administracionGestionarDiscapacidades: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarDiscapacidades(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarDiscapacidades(page, context, environment))
     },
     administracionGestionarEstadoCivil: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarEstadoCivil(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarEstadoCivil(page, context, environment))
     },
     administracionGestionarTiposDeCarnet: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarTiposDeCarnet(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarTiposDeCarnet(page, context, environment))
     },
     administracionGestionarNivelesIdioma: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarNivelesIdioma(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarNivelesIdioma(page, context, environment))
     },
     administracionGestionarNivelEstudio: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarNivelEstudio(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarNivelEstudio(page, context, environment))
     },
     administracionGestionarNivelesInformatica: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarNivelesInformatica(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarNivelesInformatica(page, context, environment))
     },
     administracionGestionarIdiomas: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarIdiomas(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarIdiomas(page, context, environment))
     },
     administracionGestionarDisponibilidadHoraria: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarDisponibilidadHoraria(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarDisponibilidadHoraria(page, context, environment))
     },
     administracionGestionarSexo: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarSexo(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarSexo(page, context, environment))
     },
     administracionGestionarEstadosEstudios: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarEstadosEstudios(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarEstadosEstudios(page, context, environment))
     },
     administracionGestionarNacionalidades: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarNacionalidades(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarNacionalidades(page, context, environment))
     },
     administracionGestionarTitulos: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarTitulos(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarTitulos(page, context, environment))
     },
     administracionGestionarVinculosFamiliares: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarVinculosFamiliares(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarVinculosFamiliares(page, context, environment))
     },
     administracionGestionarEstadosBeneficiario: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarEstadosBeneficiario(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarEstadosBeneficiario(page, context, environment))
     },
     administracionGestionarCargos: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarCargos(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarCargos(page, context, environment))
     },
     administracionGestionarMotivosBaja: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarMotivosBaja(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarMotivosBaja(page, context, environment))
     },
     administracionGestionarPresencia: async ({ page, context }, use) => {
-        const menu = new AdministracionGestionarPresencia(page, context, environment)
-        await use(menu)
+        await use(new AdministracionGestionarPresencia(page, context, environment))
     },
-
-
-
-
-
-
-
-
-
 
 
 
     // HEADER
     menuQRMiniaplicacion: async ({ page, context }, use) => {
-        const menu = new MenuQRMiniaplicacion(page, context, environment)
-        await use(menu)
+        await use(new MenuQRMiniaplicacion(page, context, environment))
     },
     menuBuscarBeneficiario: async ({ page, context }, use) => {
-        const menu = new MenuBuscarBeneficiario(page, context, environment)
-        await use(menu)
+        await use(new MenuBuscarBeneficiario(page, context, environment))
     },
     menuBuscarListadoPrestaciones: async ({ page, context }, use) => {
-        const menu = new MenuBuscarListadoPrestaciones(page, context, environment)
-        await use(menu)
+        await use(new MenuBuscarListadoPrestaciones(page, context, environment))
     },
     menuEntregaPrestaciones: async ({ page, context }, use) => {
-        const menu = new MenuEntregaPrestaciones(page, context, environment)
-        await use(menu)
+        await use(new MenuEntregaPrestaciones(page, context, environment))
     },
     menuAccionesMasivas: async ({ page, context }, use) => {
-        const menu = new MenuAccionesMasivas(page, context, environment)
-        await use(menu)
+        await use(new MenuAccionesMasivas(page, context, environment))
     },
     menuIngresarBeneficiario: async ({ page, context }, use) => {
-        const menu = new MenuIngresarBeneficiario(page, context, environment)
-        await use(menu)
+        await use(new MenuIngresarBeneficiario(page, context, environment))
     },
     menuAdministracion: async ({ page, context }, use) => {
-        const menu = new MenuAdministracion(page, context, environment)
-        await use(menu)
+        await use(new MenuAdministracion(page, context, environment))
     },
     menuCerrarSesion: async ({ page, context }, use) => {
-        const menu = new MenuCerrarSesion(page, context, environment)
-        await use(menu)
+        await use(new MenuCerrarSesion(page, context, environment))
     },
-
 
 
 })

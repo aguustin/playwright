@@ -12,16 +12,17 @@ export class PrestacionesBotonCrear extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BOTON_CREAR = this.page.locator("(//input[contains(@type,'button')])[2]")
+        this.BOTON_CREAR = this.page.locator("(//input[@id='BTNINSERT'])[1]")
     }
 
-    async clickPrestacionesBotonCrear(): Promise<void> {
+    async clickBotonCrear(): Promise<void> {
         await this.click(this.BOTON_CREAR)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
+        // await this.page.waitForTimeout(3000)
     }
 
     async navegarPrestacionesBotonCrear(): Promise<void> {
-        await this.clickPrestacionesBotonCrear()
+        await this.clickBotonCrear()
     }
 }

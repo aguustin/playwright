@@ -12,7 +12,6 @@ export class ModalFormularioBotonConfirmar extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        // this.BOTON_CONFIRMAR = this.page.locator("(//input[@id='BTN_ENTER'])[1]")
         this.BOTON_CONFIRMAR = this.page.locator('//input [@id="BTN_ENTER"]')
     }
 
@@ -20,7 +19,7 @@ export class ModalFormularioBotonConfirmar extends BasePage {
         await this.click(this.BOTON_CONFIRMAR)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(13000)
+        await this.page.waitForTimeout(5000)
     }
 
     async navegarModalFormularioBotonConfirmar(): Promise<void> {
