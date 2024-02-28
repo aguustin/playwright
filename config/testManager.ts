@@ -149,7 +149,7 @@ import { PrestacionesFiltroVer } from '../pageObjectModel/header/Administracion/
 import {
     GestionarCapacitacionesFormulario
 } from '../pageObjectModel/header/Administracion/Capacitaciones/GestionarCapacitacionesFormulario'
-import { PrestacionesFormulario } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesFormulario'
+import { PrestacionesFormularioGeneral } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesFormularioGeneral'
 
 const environment = process.env.TEST || 'qa'
 
@@ -216,7 +216,7 @@ const test = baseTest.extend<{
     prestacionesBotonCrear :PrestacionesBotonCrear
     prestacionesFiltroVer: PrestacionesFiltroVer
     gestionarCapacitacionesFormulario: GestionarCapacitacionesFormulario
-    prestacionesFormulario: PrestacionesFormulario
+    prestacionesFormularioGeneral: PrestacionesFormularioGeneral
 
 
 }>({
@@ -238,8 +238,8 @@ const test = baseTest.extend<{
     prestacionesFiltroVer: async ({ page, context }, use) => {
         await use(new PrestacionesFiltroVer(page, context, environment))
     },
-    prestacionesFormulario: async ({ page, context }, use) => {
-        await use(new PrestacionesFormulario(page, context, environment))
+    prestacionesFormularioGeneral: async ({ page, context }, use) => {
+        await use(new PrestacionesFormularioGeneral(page, context, environment))
     },
 
 
