@@ -15,6 +15,7 @@ export class PrestacionesFormularioGeneral extends BasePage {
     readonly RANGO_ETARIO_NO: Locator
     readonly CATEGORIA: Locator
     readonly SUBCATEGORIA: Locator
+    readonly ALBERGUE: Locator
     readonly OBSERVACIONES: Locator
 
     private env: any
@@ -29,10 +30,13 @@ export class PrestacionesFormularioGeneral extends BasePage {
         this.CONTROLA_CUPO_SI = this.page.locator("(//label[normalize-space()='true'])[1]")
         this.CONTROLA_CUPO_NO = this.page.locator("(//label[normalize-space()='false'])[1]")
         this.NRO_DECRETO_ANIO = this.page.locator("(//input[@id='W0029CTLPRESTACIONDECRETONRO'])[1]")
-        this.RANGO_ETARIO_SI = this.page.locator('//input [@id="W0029CTLPRESTACIONINDICAOCUPAEDAD2"]')
-        this.RANGO_ETARIO_NO = this.page.locator('//input [@id="W0029CTLPRESTACIONINDICAOCUPAEDAD1"]')
-        this.CATEGORIA = this.page.locator('//select [@id="W0029CTLCATETORIAPRESTACIONID"]')
-        this.SUBCATEGORIA = this.page.locator('id="W0029CTLCATETORIAPRESTACIONSUBCATID"')
+        // this.RANGO_ETARIO_SI = this.page.locator('//input [@id="W0029CTLPRESTACIONINDICAOCUPAEDAD2"]')
+        this.RANGO_ETARIO_SI = this.page.getByText('Si', { exact: true })
+        // this.RANGO_ETARIO_NO = this.page.locator('//input [@id="W0029CTLPRESTACIONINDICAOCUPAEDAD1"]')
+        this.RANGO_ETARIO_NO = this.page.getByText('No', { exact: true })
+        this.CATEGORIA = this.page.locator("(//select[@id='W0029CTLCATETORIAPRESTACIONID'])[1]")
+        this.SUBCATEGORIA = this.page.locator("(//select[@id='W0029CTLCATETORIAPRESTACIONSUBCATID'])[1]")
+        this.ALBERGUE = this.page.locator("(//option[normalize-space()='Albergue'])[1]")
         this.OBSERVACIONES = this.page.locator("(//textarea[@id='W0029CTLPRESTACIONOBSERVACIONES'])[1]")
 
         this.BOTON_GUARDAR_CONTINUAR = this.page.locator('//input [@id="BTN_ENTER"]')
@@ -42,43 +46,36 @@ export class PrestacionesFormularioGeneral extends BasePage {
         await this.fill(this.TEXTAREA, 'AUTOMATIZACION HOTELERIA')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSelectTipoServicio(): Promise<void> {
         await this.selectOption(this.TIPO, 'S')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSelectTipoBien(): Promise<void> {
         await this.selectOption(this.TIPO, 'B')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSelectEntregaMasiva(): Promise<void> {
         await this.selectOption(this.ENTREGA, 'M')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSelectEntregaNormal(): Promise<void> {
         await this.selectOption(this.ENTREGA, 'N')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickControlaCupoSi(): Promise<void> {
         await this.click(this.CONTROLA_CUPO_SI)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickControlaCupoNo(): Promise<void> {
         await this.click(this.CONTROLA_CUPO_NO)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async ingresoNumDecretoAni(): Promise<void> {
         await this.fill(this.NRO_DECRETO_ANIO, '2024')
@@ -87,59 +84,49 @@ export class PrestacionesFormularioGeneral extends BasePage {
         await this.click(this.RANGO_ETARIO_SI)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(()=> document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickRangoEtarioNo(): Promise<void> {
         await this.click(this.RANGO_ETARIO_NO)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(()=> document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickCategoriaColaboracion(): Promise<void> {
         await this.selectOption(this.CATEGORIA, '3')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickCategoriaPedidos(): Promise<void> {
         await this.selectOption(this.CATEGORIA, '2')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickCategoriaInscripcion(): Promise<void> {
-        await this.selectOption(this.CATEGORIA, '3')
+        await this.selectOption(this.CATEGORIA, '1')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSubCategoriaSoporteAlimentario(): Promise<void> {
         await this.selectOption(this.SUBCATEGORIA, '4')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSubCategoriaEconomico(): Promise<void> {
         await this.selectOption(this.SUBCATEGORIA, '2')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSubCategoriaRenhabit(): Promise<void> {
         await this.selectOption(this.SUBCATEGORIA, '1')
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async clickSubCategoriaAlbergue(): Promise<void> {
-        await this.selectOption(this.SUBCATEGORIA, '3')
+        await this.click(this.ALBERGUE)
         await this.page.waitForLoadState('domcontentloaded')
         await this.page.waitForFunction(() => document.readyState === 'complete')
-        await this.page.waitForTimeout(3000)
     }
     async ingresoObservaciones(): Promise<void> {
         await this.fill(this.OBSERVACIONES, 'Automatizacion')
-        await this.page.waitForTimeout(3000)
     }
 
 
