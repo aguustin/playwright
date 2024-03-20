@@ -150,6 +150,12 @@ import {
     GestionarCapacitacionesFormulario
 } from '../pageObjectModel/header/Administracion/Capacitaciones/GestionarCapacitacionesFormulario'
 import { PrestacionesFormularioGeneral } from '../pageObjectModel/header/Administracion/Prestaciones/PrestacionesFormularioGeneral'
+import {
+    PrestacionesTablaNombrePrestacion
+} from '../pageObjectModel/header/Administracion/Prestaciones/Tabla/PrestacionesTablaNombrePrestacion'
+import {
+    PrestacionesTablaModificacionNombrePrestacion
+} from '../pageObjectModel/header/Administracion/Prestaciones/Tabla/PrestacionesTablaModificacionNombrePrestacion'
 
 const environment = process.env.TEST || 'qa'
 
@@ -217,7 +223,8 @@ const test = baseTest.extend<{
     prestacionesFiltroVer: PrestacionesFiltroVer
     gestionarCapacitacionesFormulario: GestionarCapacitacionesFormulario
     prestacionesFormularioGeneral: PrestacionesFormularioGeneral
-
+    prestacionesTablaNombrePrestacion: PrestacionesTablaNombrePrestacion
+    prestacionesTablaModificacionNombrePrestacion: PrestacionesTablaModificacionNombrePrestacion
 
 }>({
     loginPage: async ({ page, context }, use) => {
@@ -241,6 +248,13 @@ const test = baseTest.extend<{
     prestacionesFormularioGeneral: async ({ page, context }, use) => {
         await use(new PrestacionesFormularioGeneral(page, context, environment))
     },
+    prestacionesTablaNombrePrestacion: async ({ page, context }, use) => {
+        await use(new PrestacionesTablaNombrePrestacion(page, context, environment))
+    },
+    prestacionesTablaModificacionNombrePrestacion: async ({ page, context }, use) => {
+        await use(new PrestacionesTablaModificacionNombrePrestacion(page, context, environment))
+    },
+
 
 
 

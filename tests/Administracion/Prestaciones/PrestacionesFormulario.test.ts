@@ -1,7 +1,4 @@
 import test from '../../../config/testManager'
-import {
-    PrestacionesBotonCrear
-} from '../../../pageObjectModel/header/Administracion/Prestaciones/PrestacionesBotonCrear'
 
 test.beforeEach(async ({ loginPage, menuAdministracion, prestaciones, prestacionesBotonCrear }) => {
     await test.step('Navegar en la url de Gestion Social', async () => {
