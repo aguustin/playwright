@@ -156,6 +156,12 @@ import {
 import {
     PrestacionesTablaModificacionNombrePrestacion
 } from '../pageObjectModel/header/Administracion/Prestaciones/Tabla/PrestacionesTablaModificacionNombrePrestacion'
+import {
+    GestionEtapasBotonAgregar
+} from '../pageObjectModel/header/Administracion/GestionEtapas/GestionEtapasBotonAgregar'
+import {
+    AdministracionBotonGestionEtapas
+} from '../pageObjectModel/header/Administracion/AdministracionBotonGestionEtapas'
 
 const environment = process.env.TEST || 'qa'
 
@@ -225,12 +231,21 @@ const test = baseTest.extend<{
     prestacionesFormularioGeneral: PrestacionesFormularioGeneral
     prestacionesTablaNombrePrestacion: PrestacionesTablaNombrePrestacion
     prestacionesTablaModificacionNombrePrestacion: PrestacionesTablaModificacionNombrePrestacion
+    administracionBotonGestionEtapas: AdministracionBotonGestionEtapas
+    gestionEtapasBotonAgregar: GestionEtapasBotonAgregar
 
 }>({
     loginPage: async ({ page, context }, use) => {
         await use(new LoginPage(page, context, environment))
     },
 
+    // GESTINON ETAPAS
+    administracionBotonGestionEtapas: async ({page, context}, use) => {
+        await use(new AdministracionBotonGestionEtapas(page,context, environment))
+    },
+    gestionEtapasBotonAgregar: async ({page, context}, use) => {
+        await use(new GestionEtapasBotonAgregar(page, context, environment))
+    },
 
     // PRESTACIONES
     prestaciones: async ({ page, context }, use) => {
