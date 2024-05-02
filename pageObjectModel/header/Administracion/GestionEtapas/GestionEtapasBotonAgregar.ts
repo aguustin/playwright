@@ -12,7 +12,7 @@ export class GestionEtapasBotonAgregar extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BOTON_AGREGAR = this.page.locator('//input [@id="BTNINSERT"]')
+        this.BOTON_AGREGAR = this.page.locator('//input[@id="BTNINSERT"]')
 
     }
     async clickBotonAgregar(): Promise<void> {

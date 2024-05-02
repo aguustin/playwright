@@ -12,12 +12,12 @@ export class GestionarNacionalidadesBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vNACIONALIDADDESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vNACIONALIDADDESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['FEM', 'MAS', 'OTRO', 'INO', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vNACIONALIDADDESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vNACIONALIDADDESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

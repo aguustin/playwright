@@ -12,12 +12,12 @@ export class GestionarEstadosEstudiosBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vESTADOESTUDIODESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vESTADOESTUDIODESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['COMP', 'IN', 'CURS', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vESTADOESTUDIODESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vESTADOESTUDIODESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

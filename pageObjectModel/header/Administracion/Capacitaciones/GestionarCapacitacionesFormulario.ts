@@ -18,7 +18,6 @@ export class GestionarCapacitacionesFormulario extends BasePage {
         // this.FORMULARIO_IFRAME = this.page.locator()
         this.BOTON_CREAR = this.page.locator('//input [@id="BTNAGREGAR"]')
         this.DESCRIPCION_INPUT = this.page.locator("//input[@id='CAPACITACIONDESCRIPCION']")
-
         this.BOTON_CONFIRMAR = this.page.locator('//input [@id="BTN_ENTER"]')
     }
 

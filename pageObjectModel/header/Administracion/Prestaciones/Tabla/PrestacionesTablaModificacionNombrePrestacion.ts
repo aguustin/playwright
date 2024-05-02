@@ -24,25 +24,25 @@ export class PrestacionesTablaModificacionNombrePrestacion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.DESCRIPCION = this.page.locator('//*[@id="PRESTACIONDESCRIPCION"]')
-        this.TIPO = this.page.locator('//*[@id="PRESTACIONTIPO"]')
+        this.DESCRIPCION = this.page.locator('//*[@id="W0020CTLPRESTACIONDESCRIPCION"]')
+        this.TIPO = this.page.locator('//*[@id="W0020CTLPRESTACIONTIPO"]')
         this.CONTROLA_CUPO = this.page.locator('//*[@id="PRESTACIONCONTROLACUPO"]')
-        this.ENTREGA = this.page.locator('//*[@id="PRESTACIONTIPOENTREGA"]')
-        this.NUMERO_DECRETO = this.page.locator('//*[@id="PRESTACIONDECRETONRO"]')
-        this.ANIO_DECRETO = this.page.locator('//*[@id="PRESTACIONDECRETOANIO"]')
+        this.ENTREGA = this.page.locator('//*[@id="W0020CTLPRESTACIONTIPOENTREGA"]')
+        this.NUMERO_DECRETO = this.page.locator('//*[@id="W0020CTLPRESTACIONDECRETONRO"]')
+        this.ANIO_DECRETO = this.page.locator('//*[@id="W0020CTLPRESTACIONDECRETOANIO"]')
         this.RANGO_EDADES = this.page.locator('//*[@id="PRESTACIONINDICAOCUPAEDAD"]')
         this.EDAD_DESDE = this.page.locator('//*[@id="PRESTACIONEDADDESDE"]')
         this.EDAD_HASTA = this.page.locator('//*[@id="PRESTACIONEDADHASTA"]')
-        this.CATEGORIA = this.page.locator('//*[@id="CATETORIAPRESTACIONID"]')
-        this.SUBCATEGORIA = this.page.locator('//*[@id="CATETORIAPRESTACIONSUBCATID"]')
-        this.OBSERVACIONES = this.page.locator('//*[@id="PRESTACIONOBSERVACIONES"]')
-        this.BOTON_CONFIRMAR = this.page.locator('//*[@id="BTN_ENTER"]')
+        this.CATEGORIA = this.page.locator('//*[@id="W0020CTLCATETORIAPRESTACIONID"]')
+        this.SUBCATEGORIA = this.page.locator('//*[@id="W0020CTLCATETORIAPRESTACIONSUBCATID"]')
+        this.OBSERVACIONES = this.page.locator('//*[@id="W0020CTLPRESTACIONOBSERVACIONES"]')
+        this.BOTON_CONFIRMAR = this.page.locator('//*[@id="W0020GUARDAR"]')
     }
 
     async modificarDescripcion(): Promise<void>{
         await this.goto('https://apphomo.godoycruz.gob.ar/gestionsocialhomo/servlet/prestacion?UPD,21')
-        await this.page.waitForSelector('//*[@id="PRESTACIONDESCRIPCION"]')
-        await this.page.$eval('//*[@id="PRESTACIONDESCRIPCION"]', i => {
+        await this.page.waitForSelector('//*[@id="W0020CTLPRESTACIONDESCRIPCION"]')
+        await this.page.$eval('//*[@id="W0020CTLPRESTACIONDESCRIPCION"]', i => {
             (i as HTMLTextAreaElement).value = ''
         })
         await this.fill(this.DESCRIPCION, 'Modificacion de Texto con automatización')
@@ -80,8 +80,8 @@ export class PrestacionesTablaModificacionNombrePrestacion extends BasePage {
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
     async modificarNumeroDecreto(): Promise<void> {
-        await this.page.waitForSelector('//*[@id="PRESTACIONDECRETONRO"]')
-        await this.page.$eval('//*[@id="PRESTACIONDECRETONRO"]', i => {
+        await this.page.waitForSelector('//*[@id="W0020CTLPRESTACIONDECRETONRO"]')
+        await this.page.$eval('//*[@id="W0020CTLPRESTACIONDECRETONRO"]', i => {
             (i as HTMLTextAreaElement).value = ''
         })
         await this.fill(this.NUMERO_DECRETO, '123456789')
@@ -89,8 +89,8 @@ export class PrestacionesTablaModificacionNombrePrestacion extends BasePage {
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
     async modificarAnioDecreto(): Promise<void> {
-        await this.page.waitForSelector('//*[@id="PRESTACIONDECRETOANIO"]')
-        await this.page.$eval('//*[@id="PRESTACIONDECRETOANIO"]', i => {
+        await this.page.waitForSelector('//*[@id="W0020CTLPRESTACIONDECRETOANIO"]')
+        await this.page.$eval('//*[@id="W0020CTLPRESTACIONDECRETOANIO"]', i => {
             (i as HTMLTextAreaElement).value = ''
         })
         await this.fill(this.ANIO_DECRETO, 'Test Automatizado 210324')
@@ -164,13 +164,13 @@ export class PrestacionesTablaModificacionNombrePrestacion extends BasePage {
         await this.page.waitForFunction(() => document.readyState === 'complete')
     }
     async modificarObservaciones(): Promise<void> {
-        await this.page.waitForSelector('//*[@id="PRESTACIONOBSERVACIONES"]')
+        await this.page.waitForSelector('//*[@id="W0020CTLPRESTACIONOBSERVACIONES"]')
         // Recupero los datos del TextArea
-        const textArea = await this.page.$eval('//*[@id="PRESTACIONOBSERVACIONES"]', (i:HTMLTextAreaElement) => i.value)
+        const textArea = await this.page.$eval('//*[@id="W0020CTLPRESTACIONOBSERVACIONES"]', (i:HTMLTextAreaElement) => i.value)
         if (textArea.trim() === ''){
             await this.fill(this.OBSERVACIONES, 'Automatizacion 210324 - 11:12')
         } else {
-            await this.page.$eval('//*[@id="PRESTACIONOBSERVACIONES"]', i => {
+            await this.page.$eval('//*[@id="W0020CTLPRESTACIONOBSERVACIONES"]', i => {
                 (i as HTMLTextAreaElement).value = 'Automatizacion 210324 - 11:15'
             })
         }

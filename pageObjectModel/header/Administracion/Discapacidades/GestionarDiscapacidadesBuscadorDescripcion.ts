@@ -12,12 +12,12 @@ export class GestionarDiscapacidadesBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vDISCAPACIDADDESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vDISCAPACIDADDESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['MOTO', 'FÍSICA', 'SICA', 'MENTAL', 'SENSO', 'VISUAL', 'PSICO', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vDISCAPACIDADDESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vDISCAPACIDADDESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

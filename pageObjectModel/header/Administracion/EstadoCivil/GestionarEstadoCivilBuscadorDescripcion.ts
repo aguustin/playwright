@@ -12,12 +12,12 @@ export class GestionarEstadoCivilBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vESTADOCIVILDESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vESTADOCIVILDESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['CASAD', 'SEPA', 'SICA', 'SOLT', 'VIVEN', 'VIUDO', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vESTADOCIVILDESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vESTADOCIVILDESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

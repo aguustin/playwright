@@ -39,12 +39,12 @@ test('@ABCD @Prestaciones @Regression (IDGS-53) Verificar que al ingresar datos 
     await test.step('Click en Normal del Select Entrega', async () => {
         await prestacionesFormularioGeneral.clickSelectEntregaNormal();
     })
-    await test.step('Click en SI en Controla Cupo', async () => {
+   /* await test.step('Click en SI en Controla Cupo', async () => {
         await prestacionesFormularioGeneral.clickControlaCupoSi();
     })
     await test.step('Click en NO en Controla Cupo', async () => {
         await prestacionesFormularioGeneral.clickControlaCupoNo();
-    })
+    })*/
     await test.step('Ingresar Anio', async () => {
         await prestacionesFormularioGeneral.ingresoNumDecretoAni();
     })
@@ -53,6 +53,9 @@ test('@ABCD @Prestaciones @Regression (IDGS-53) Verificar que al ingresar datos 
     })
     await test.step('Click en NO en Rango Etario', async () => {
         await prestacionesFormularioGeneral.clickRangoEtarioNo();
+    })
+    await test.step('Click en buscar seccion', async () => {
+        await prestacionesFormularioGeneral.clickBuscarSeccion();
     })
     await test.step('Click en Colaboracion en el select Categoria', async () => {
         await prestacionesFormularioGeneral.clickCategoriaColaboracion();

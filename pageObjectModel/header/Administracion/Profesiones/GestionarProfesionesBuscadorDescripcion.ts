@@ -12,12 +12,12 @@ export class GestionarProfesionesBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vPROFESIONDESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vPROFESIONDESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['TÉCNICO', 'TECNICO', 'DESARR', ' SOFT', 'WARE', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vPROFESIONDESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vPROFESIONDESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

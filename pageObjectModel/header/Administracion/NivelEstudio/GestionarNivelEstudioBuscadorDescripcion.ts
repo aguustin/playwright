@@ -12,12 +12,12 @@ export class GestionarNivelEstudioBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vNIVELESTUDIODESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vNIVELESTUDIODESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['PRIM', 'SECU', 'TERC', 'ARIO', 'UNI', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vNIVELESTUDIODESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vNIVELESTUDIODESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

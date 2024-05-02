@@ -12,12 +12,12 @@ export class GestionarDisponibilidadHorariaBuscadorDescripcion extends BasePage 
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vDISPONIBILIDADDESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vDISPONIBILIDADDESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['FULL', 'ANA', 'ARDE', 'OCHE', 'MA', 'TIME', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vDISPONIBILIDADDESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vDISPONIBILIDADDESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

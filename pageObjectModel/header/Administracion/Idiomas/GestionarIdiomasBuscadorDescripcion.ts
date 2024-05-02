@@ -12,12 +12,12 @@ export class GestionarIdiomasBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vIDIOMADESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vIDIOMADESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['ESPA', 'FRAN', 'INGLES', 'INGLÉS', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vIDIOMADESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vIDIOMADESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

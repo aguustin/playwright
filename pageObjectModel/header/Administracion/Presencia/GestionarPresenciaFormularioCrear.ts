@@ -13,12 +13,12 @@ export class GestionarPresenciaFormularioCrear extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.INPUT_DESCRIPCION = this.page.locator("(//input[@id='PRESENCIADESCRIPCION'])[1]")
+        this.INPUT_DESCRIPCION = this.page.locator("(//textarea[@id='PRESENCIADESCRIPCION'])[1]")
 
     }
 
     async ingresoInputDescripcion(): Promise<void> {
-        const input = "(//input[@id='PRESENCIADESCRIPCION'])[1]"
+        const input = "(//textarea[@id='PRESENCIADESCRIPCION'])[1]"
         const word = '!"#$%&/()=?¡¿/*-+'
         await this.page.waitForSelector(input)
         // await this.fill(this.BUSCADOR_DESCRIPCION, '')

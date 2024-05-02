@@ -12,12 +12,12 @@ export class GestionarEnfermedadesBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vENFERMEDADDESC'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vENFERMEDADDESC'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['ALERGIA', 'CANCER', 'DIGEST', 'ENFER', 'PIEL', 'INFEC', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vENFERMEDADDESC'])[1]"
+        const input = "(//textarea[@id='vENFERMEDADDESC'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

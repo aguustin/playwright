@@ -12,12 +12,12 @@ export class GestionarMotivosBajaBuscadorDescripcion extends BasePage {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
 
-        this.BUSCADOR_DESCRIPCION = this.page.locator("(//input[@id='vMOTIVOBAJADESCRIPCION'])[1]")
+        this.BUSCADOR_DESCRIPCION = this.page.locator("(//textarea[@id='vMOTIVOBAJADESCRIPCION'])[1]")
 
     }
     async ingresoBuscadorDescripcion(): Promise<void> {
         const charArray = ['RESI', 'FALL', 'CAMB', '!"#$%&/()=?¡¿/*-+']
-        const input = "(//input[@id='vMOTIVOBAJADESCRIPCION'])[1]"
+        const input = "(//textarea[@id='vMOTIVOBAJADESCRIPCION'])[1]"
 
         for (const word of charArray) {
             await this.page.waitForSelector(input)

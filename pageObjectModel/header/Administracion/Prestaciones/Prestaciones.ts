@@ -11,8 +11,7 @@ export class Prestaciones extends BasePage {
     constructor(page: Page, context: BrowserContext, environment: string) {
         super(page, context)
         this.env = loadEnvironmentConfig(environment)
-
-        this.PRESTACIONES = this.page.locator('//span [@id="TEXTBLOCKPRESTACIONES"]')
+        this.PRESTACIONES = this.page.locator('//span[@id="TEXTBLOCKPRESTACIONES"]')
     }
 
     async clickPrestaciones(): Promise<void> {
